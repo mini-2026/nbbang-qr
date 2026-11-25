@@ -12,7 +12,7 @@
 
 
 # static fields
-.field private static final RELEASE_API:Ljava/lang/String; = "https://api.github.com/repos/dlsdml99-create/nbbang-qr/releases/latest"
+.field private static final RELEASE_API:Ljava/lang/String; = "https://api.github.com/repos/mini-2026/nbbang-qr/releases/latest"
 
 .field private static final REQ_BK_OPEN:I = 0x1c86
 
@@ -696,7 +696,7 @@
 
     if-eqz v1, :cond_1
 
-    const-string v0, "/dlsdml99-create/"
+    const-string v0, "/mini-2026/"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
@@ -705,7 +705,7 @@
     return p0
 
     :cond_1
-    const-string p0, "dlsdml99-create.github.io"
+    const-string p0, "mini-2026.github.io"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -1001,7 +1001,7 @@
     :try_start_0
     new-instance v1, Ljava/net/URL;
 
-    const-string v2, "https://api.github.com/repos/dlsdml99-create/nbbang-qr/releases/latest"
+    const-string v2, "https://api.github.com/repos/mini-2026/nbbang-qr/releases/latest"
 
     invoke-direct {v1, v2}, Ljava/net/URL;-><init>(Ljava/lang/String;)V
 
@@ -1151,7 +1151,7 @@
 
     if-eqz v4, :cond_3
 
-    const-string v4, "https://github.com/dlsdml99-create/nbbang-qr/releases/download/"
+    const-string v4, "https://github.com/mini-2026/nbbang-qr/releases/download/"
 
     invoke-virtual {v5, v4}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
