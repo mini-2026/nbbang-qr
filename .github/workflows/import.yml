@@ -1,0 +1,25 @@
+name: import
+on:
+  push:
+    paths: ['import/original.apk']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  decode:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with: { distribution: temurin, java-version: '17' }
+      - name: Decode APK into editable project
+        run: |
+          curl -sSL -o /tmp/apktool.jar https://github.com/iBotPeaches/Apktool/releases/download/v2.10.0/apktool_2.10.0.jar
+          echo "c0350abbab5314248dfe2ee0c907def4edd14f6faef1e5d372d23a6e6ba7e7d0  /tmp/apktool.jar" | sha256sum -c || echo "::warning::apktool checksum differs"
+          rm -rf android
+          java -jar /tmp/apktool.jar d import/original.apk -o android -f
+          rm -rf android/original/META-INF
+          git rm -q import/original.apk
+          git add -A android
+          git -c user.name=Claude -c user.email=noreply@anthropic.com commit -q -m "Import app project from APK"
+          git push
