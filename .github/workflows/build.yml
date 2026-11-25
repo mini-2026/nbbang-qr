@@ -30,6 +30,15 @@ jobs:
           echo "ver=$name" >> $GITHUB_OUTPUT; echo "TAG=$tag" >> $GITHUB_ENV; echo "VER=$name" >> $GITHUB_ENV
           if gh release view "$tag" >/dev/null 2>&1; then echo "SKIP=1" >> $GITHUB_ENV; fi
         env: { GH_TOKEN: '${{ github.token }}' }
+      - name: Build APK
+        if: env.SKIP != '1'
+        run: |
+          curl -sSL -o /tmp/apktool.jar https://github.com/iBotPeaches/Apktool/releases/download/v2.10.0/apktool_2.10.0.jar
+          sha256sum /tmp/apktool.jar
+          java -jar /tmp/apktool.jar b android -o /tmp/unsigned.apk
+          BT=$(ls -d $ANDROID_HOME/build-tools/* | sort -V | tail -1)
+          $BT/zipalign -P 16 -f 4 /tmp/unsigned.apk /tmp/aligned.apk
+          echo "BT=$BT" >> $GITHUB_ENV
       - name: Signing key
         if: env.SKIP != '1'
         env: { PASS: '${{ secrets.SIGNING_PASS }}' }
@@ -43,15 +52,10 @@ jobs:
             git -c user.name=Claude -c user.email=noreply@anthropic.com commit -q -m "Add encrypted signing key"
             git push
           fi
-      - name: Build and sign APK
+      - name: Sign APK
         if: env.SKIP != '1'
         env: { PASS: '${{ secrets.SIGNING_PASS }}' }
         run: |
-          curl -sSL -o /tmp/apktool.jar https://github.com/iBotPeaches/Apktool/releases/download/v2.10.0/apktool_2.10.0.jar
-          sha256sum /tmp/apktool.jar
-          java -jar /tmp/apktool.jar b android -o /tmp/unsigned.apk
-          BT=$(ls -d $ANDROID_HOME/build-tools/* | sort -V | tail -1)
-          $BT/zipalign -P 16 -f 4 /tmp/unsigned.apk /tmp/aligned.apk
           APK=$(python3 -c "import json;print(json.load(open('site/about.json'))['apk'])")
           $BT/apksigner sign --ks keys/release.p12 --ks-pass env:PASS --ks-key-alias app --out "/tmp/$APK" /tmp/aligned.apk
           $BT/apksigner verify --print-certs "/tmp/$APK" | grep -E 'SHA-256'
