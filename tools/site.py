@@ -27,7 +27,7 @@ def find_notes():
                     arr = [dict(v=a[0], d=a[1], items=a[2]) for a in arr if len(a) >= 3]
                 if arr and isinstance(arr[0], dict) and 'v' in arr[0]:
                     for a in arr:
-                        a['v'] = str(a['v']).lstrip('v')
+                        a['v'] = ver if str(a['v']) == 'current' else str(a['v']).lstrip('v')
                     return arr
     return []
 
