@@ -34,7 +34,7 @@ jobs:
         if: env.SKIP != '1'
         run: |
           curl -sSL -o /tmp/apktool.jar https://github.com/iBotPeaches/Apktool/releases/download/v2.10.0/apktool_2.10.0.jar
-          sha256sum /tmp/apktool.jar
+          echo "c0350abbab5314248dfe2ee0c907def4edd14f6faef1f5d372d3d4abd28f0431  /tmp/apktool.jar" | sha256sum -c -
           java -jar /tmp/apktool.jar b android -o /tmp/unsigned.apk
           BT=$(ls -d $ANDROID_HOME/build-tools/* | sort -V | tail -1)
           $BT/zipalign -P 16 -f 4 /tmp/unsigned.apk /tmp/aligned.apk

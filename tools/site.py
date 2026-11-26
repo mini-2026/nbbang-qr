@@ -61,6 +61,8 @@ notes = find_notes()[:8]
 e = html.escape
 apk = f'https://github.com/{repo}/releases/latest/download/{about["apk"]}'
 intro = ''.join(f'<li>{e(x)}</li>' for x in about['intro'])
+# 개인정보: 앱 안 정보 창과 같은 문구 (about.json privacy). 없으면 예전 한 줄
+privacy = ''.join(f'<li>{e(x)}</li>' for x in (about.get('privacy') or ['입력한 내용은 내 휴대폰에만 저장돼요. 따로 모으거나 보내지 않아요.']))
 upd = ''.join(
     f'<div class="n"><b>v{e(str(n.get("v","")))}</b> <span>{e(str(n.get("d","")))}</span><ul>'
     + ''.join(f'<li>{e(str(i))}</li>' for i in (n.get('items') or [])) + '</ul></div>'
@@ -86,7 +88,7 @@ h2{{font-size:18px;margin:0 0 8px}}ul{{margin:4px 0;padding-left:20px}}.n{{borde
 <li>예전 주소에서 받은 앱이 있으면, 앱 안에서 백업을 먼저 하고 지운 뒤 설치해 주세요. 설치한 다음 백업을 불러오면 돼요.</li>
 <li>설치한 뒤에는 앱 안에서 새 버전을 알려 드려요.</li></ul></section>
 <section id="updates"><h2>업데이트 내용</h2>{upd}</section>
-<section><h2>개인정보</h2><ul><li>입력한 내용은 내 휴대폰에만 저장돼요. 따로 모으거나 보내지 않아요.</li></ul></section>
+<section><h2>개인정보</h2><ul>{privacy}</ul></section>
 </main></body></html>'''
 open(os.path.join(out, 'index.html'), 'w', encoding='utf-8').write(page)
 # old in-app links (guide.html etc.) land on the download page

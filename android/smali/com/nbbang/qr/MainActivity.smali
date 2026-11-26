@@ -886,7 +886,7 @@
 
     move-result v2
 
-    const/high16 v3, 0x5000000
+    const/high16 v3, 0x500000
 
     if-gt v2, v3, :cond_0
 
