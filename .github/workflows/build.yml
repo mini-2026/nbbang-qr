@@ -40,15 +40,16 @@ jobs:
           $BT/zipalign -P 16 -f 4 /tmp/unsigned.apk /tmp/aligned.apk
           echo "BT=$BT" >> $GITHUB_ENV
       - name: Signing key
-        if: env.SKIP != '1'
         env: { PASS: '${{ secrets.SIGNING_PASS }}', KEY_B64: '${{ secrets.SIGNING_KEY_B64 }}' }
         run: |
           if [ ${#PASS} -lt 16 ]; then echo "::error::Add secret SIGNING_PASS (16+ characters)"; exit 1; fi
           mkdir -p keys
           # 서명 키는 Secret(SIGNING_KEY_B64)을 먼저 쓰고, 없으면 예전처럼 저장소 파일을 써요.
           # 새 키는 절대 만들지 않아요 (키가 바뀌면 업데이트 설치가 안 돼요).
-          if [ -n "$KEY_B64" ]; then printf '%s' "$KEY_B64" | base64 -d > keys/release.p12
-          elif [ ! -f keys/release.p12 ]; then echo "::error::Add secret SIGNING_KEY_B64 (signing key missing; never generate a new one)"; exit 1; fi
+          if [ -z "$KEY_B64" ]; then echo "::error::Add secret SIGNING_KEY_B64 (signing key missing; never generate a new one)"; exit 1; fi
+          printf '%s' "$KEY_B64" | tr -d ' \r\n' | base64 -d > keys/release.p12
+          # 예전과 같은 키인지 확인 (다르면 업데이트 설치가 안 돼요)
+          echo "a7f0bcb6e929eeec7f5c413ea8b061c42fa7e76fe78887a36d9efebf1be2dcde  keys/release.p12" | sha256sum -c --quiet || { echo "::error::SIGNING_KEY_B64 is not the same key as before"; exit 1; }
           keytool -list -keystore keys/release.p12 -storetype PKCS12 -storepass "$PASS" -alias app >/dev/null
       - name: Sign APK
         if: env.SKIP != '1'
