@@ -27,9 +27,9 @@ h1{font-family:var(--display);font-weight:900;font-size:2.2rem;line-height:1;mar
 h1 span{background:var(--hi);padding:0 .15em}
 .sub{color:var(--muted);margin:6px 0 0;font-size:.9rem}
 .panel{background:var(--paper);border-radius:14px;padding:18px;display:grid;gap:14px}
-.label{font-size:.75rem;letter-spacing:.06em;color:var(--muted);font-weight:600}
+.label{font-size:.875rem;letter-spacing:.06em;color:var(--muted);font-weight:600}
 .field{display:grid;gap:6px}
-input,select{width:100%;font:inherit;color:var(--ink);background:var(--bg);border:1.5px solid transparent;border-radius:10px;padding:12px 12px;min-width:0}
+input,select{min-height:48px;width:100%;font:inherit;color:var(--ink);background:var(--bg);border:1.5px solid transparent;border-radius:10px;padding:12px 12px;min-width:0}
 input:focus,select:focus{outline:none;border-color:var(--accent)}
 input::placeholder{color:var(--muted);opacity:.55}
 input:focus::placeholder{color:transparent}
@@ -37,9 +37,9 @@ input:focus::placeholder{color:transparent}
 .row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .stepper{display:flex;align-items:center;gap:8px}
 .stepper input{text-align:center}
-.stepper button{flex:none;width:44px;height:46px;border-radius:10px;border:none;background:var(--bg);color:var(--ink);font-size:1.3rem;cursor:pointer}
+.stepper button{flex:none;width:48px;height:48px;border-radius:10px;border:none;background:var(--bg);color:var(--ink);font-size:1.3rem;cursor:pointer}
 .seg{display:flex;gap:6px;flex-wrap:wrap}
-.seg button{font:inherit;font-size:.85rem;padding:7px 12px;border-radius:999px;border:1.5px solid var(--line);background:transparent;color:var(--ink);cursor:pointer}
+.seg button{font:inherit;font-size:.875rem;padding:7px 12px;border-radius:999px;border:1.5px solid var(--line);background:transparent;color:var(--ink);cursor:pointer}
 .seg button[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
 button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 /* ticket */
@@ -47,16 +47,16 @@ button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 .ticket-top{padding:20px 18px 18px;display:grid;gap:4px}
 .per{font-family:var(--display);font-weight:800;font-size:3rem;line-height:1.05;font-variant-numeric:tabular-nums}
 .per small{font-family:var(--body);font-size:1rem;font-weight:600;margin-left:4px}
-.note{color:var(--muted);font-size:.85rem}
-.bigwarn{grid-column:1/-1;flex-basis:100%;font-size:.8rem;font-weight:600;color:#b45309;background:#fef3c7;border-radius:8px;padding:6px 10px;margin-top:4px}
+.note{color:var(--muted);font-size:.875rem}
+.bigwarn{grid-column:1/-1;flex-basis:100%;font-size:.875rem;font-weight:600;color:#b45309;background:#fef3c7;border-radius:8px;padding:6px 10px;margin-top:4px}
 .paid{display:flex;flex-direction:column;gap:8px}
 .paid .row{display:flex;align-items:center;justify-content:space-between;gap:8px}
 .pchips{display:flex;flex-wrap:wrap;gap:6px}
-.pchips button,.gchips button{font:inherit;font-size:.85rem;font-weight:600;padding:8px 12px;border-radius:999px;border:1.5px solid var(--line);background:transparent;color:var(--ink);cursor:pointer}
+.pchips button,.gchips button{font:inherit;font-size:.875rem;font-weight:600;min-height:48px;padding:8px 12px;border-radius:999px;border:1.5px solid var(--line);background:transparent;color:var(--ink);cursor:pointer}
 .pchips button[aria-pressed="true"]{background:#16a34a;border-color:#16a34a;color:#fff}
 .gchips{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
-.gchips .x{border:0;min-width:44px;min-height:40px;padding:4px 6px;font-size:.8rem;color:var(--muted)}
-.xpaid{margin-top:8px;font:inherit;font-weight:700;font-size:.9rem;padding:10px;border-radius:10px;border:1.5px solid var(--line);background:transparent;color:var(--ink);cursor:pointer;width:100%}
+.gchips .x{border:0;min-width:48px;min-height:48px;padding:4px 6px;font-size:.875rem;color:var(--muted)}
+.xpaid{margin-top:8px;font:inherit;font-weight:700;font-size:.9rem;min-height:48px;padding:10px;border-radius:10px;border:1.5px solid var(--line);background:transparent;color:var(--ink);cursor:pointer;width:100%}
 .xpaid[aria-pressed="true"]{background:#16a34a;border-color:#16a34a;color:#fff}
 .xfer.done{opacity:.6}
 #calc{white-space:pre-line}
@@ -69,23 +69,23 @@ button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 .acct{text-align:center;display:grid;gap:2px}
 .acct b{font-size:1rem}
 .tabs{display:grid;grid-template-columns:1fr 1fr;gap:4px;background:var(--paper);border-radius:12px;padding:4px}
-.tabs button{font:inherit;font-weight:600;padding:11px 8px;border:none;border-radius:9px;background:transparent;color:var(--muted);cursor:pointer}
+.tabs button{font:inherit;font-weight:600;min-height:48px;padding:11px 8px;border:none;border-radius:9px;background:transparent;color:var(--muted);cursor:pointer}
 .tabs button[aria-selected="true"]{background:var(--accent);color:var(--accent-ink)}
 .tabpane{display:grid;gap:18px}
 .plist{display:grid;gap:10px}
-.pcard{display:grid;grid-template-columns:minmax(0,1fr) 40px;gap:6px;align-items:center;padding:10px;border:1.5px solid var(--line);border-radius:12px}
+.pcard{display:grid;grid-template-columns:minmax(0,1fr) 48px;gap:6px;align-items:center;padding:10px;border:1.5px solid var(--line);border-radius:12px}
 .pcard .row2{grid-column:1/-1;display:grid;grid-template-columns:minmax(0,7.5rem) minmax(0,1fr);gap:6px}
 .pcard .full{grid-column:1/-1}
 .pcard input,.pcard select{padding:10px}
-.shw{grid-column:1/-1;display:flex;flex-wrap:wrap;align-items:center;gap:6px;font-size:.8rem;color:var(--muted);font-weight:600}
-.shc{font:inherit;font-size:.8rem;font-weight:700;padding:5px 10px;border-radius:999px;border:1.5px dashed var(--line);background:transparent;color:var(--muted);text-decoration:line-through}
+.shw{grid-column:1/-1;display:flex;flex-wrap:wrap;align-items:center;gap:6px;font-size:.875rem;color:var(--muted);font-weight:600}
+.shc{font:inherit;font-size:.875rem;font-weight:700;min-height:48px;padding:5px 12px;border-radius:999px;border:1.5px dashed var(--line);background:transparent;color:var(--muted);text-decoration:line-through}
 .shc[aria-pressed="true"]{border-style:solid;border-color:var(--ink);color:var(--ink);text-decoration:none}
-.payer{grid-column:1/-1;display:flex;align-items:center;gap:8px;font-size:.8rem;color:var(--muted);font-weight:600}
+.payer{grid-column:1/-1;display:flex;align-items:center;gap:8px;font-size:.875rem;color:var(--muted);font-weight:600}
 .payer select{flex:1;min-width:0;padding:8px 10px}
 .balances{display:grid;gap:10px}
 .bal{display:flex;justify-content:space-between;align-items:center;gap:10px}
 .bal-who{display:grid;gap:2px;min-width:0}
-.pill{font-size:.78rem;font-weight:600;padding:4px 10px;border-radius:999px;white-space:nowrap;border:1.5px solid var(--line);color:var(--muted)}
+.pill{font-size:.875rem;font-weight:600;padding:4px 10px;border-radius:999px;white-space:nowrap;border:1.5px solid var(--line);color:var(--muted)}
 .pill.get{border-color:var(--accent);color:var(--accent)}
 .pill.give{border-color:var(--ink);color:var(--ink)}
 .xfers{display:grid;gap:14px}
@@ -94,50 +94,56 @@ button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 .xfer-amt{font-family:var(--display);font-weight:800;font-size:2.4rem;line-height:1.05}
 .xfer-amt small{font-family:var(--body);font-size:1rem;font-weight:600;margin-left:3px}
 .empty-msg{color:var(--muted);text-align:center;font-size:.9rem;margin:0;padding:6px}
-.empty{color:var(--muted);font-size:.85rem;text-align:center;padding:12px}
+.empty{color:var(--muted);font-size:.875rem;text-align:center;padding:12px}
+/* QR 칸은 화면 색과 상관없이 늘 흰 바탕이라 글씨도 진하게 고정 (어두운 화면에서도 잘 보이게) */
+.qr .empty{color:#4a5664}
 .actions{display:flex;gap:8px;width:100%}
-.btn{flex:1;font:inherit;font-weight:600;padding:13px;border-radius:10px;border:none;cursor:pointer;background:var(--accent);color:var(--accent-ink)}
+.btn{flex:1;font:inherit;font-weight:600;min-height:48px;padding:13px;border-radius:10px;border:none;cursor:pointer;background:var(--accent);color:var(--accent-ink)}
 .btn.ghost{background:var(--bg);color:var(--ink)}
-.toast{font-size:.85rem;color:var(--accent);min-height:1.2em;text-align:center}
-.help{font-size:.82rem;color:var(--muted);line-height:1.6}
+.toast{font-size:.875rem;color:var(--accent);min-height:1.2em;text-align:center}
+.help{font-size:.875rem;color:var(--muted);line-height:1.6}
 .help b{color:var(--ink)}
-.ex{font-size:.75rem;color:var(--muted);text-align:right}
+.ex{font-size:.875rem;color:var(--muted);text-align:right}
 .items{list-style:none;margin:0;padding:0;display:grid;gap:8px}
-.item{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,8.5rem) 40px;gap:6px;align-items:center}
+.item{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,8.5rem) 48px;gap:6px;align-items:center}
 .item input{padding:10px}
 .item .amt{text-align:right}
 .presets{display:flex;gap:6px;flex-wrap:wrap}
-.presets button{font:inherit;font-size:.82rem;font-weight:600;padding:7px 12px;border-radius:999px;border:1.5px solid var(--line);background:transparent;color:var(--ink);cursor:pointer}
+.presets button{font:inherit;font-size:.875rem;font-weight:600;min-height:48px;padding:7px 14px;border-radius:999px;border:1.5px solid var(--line);background:transparent;color:var(--ink);cursor:pointer}
 .presets button:active{background:var(--ink);color:var(--paper);border-color:var(--ink)}
-.rcpt{grid-column:1/-1;font-size:.78rem;color:var(--accent);font-weight:600;padding-left:4px}
-.del{width:40px;height:42px;border:none;border-radius:10px;background:transparent;color:var(--muted);font-size:1.2rem;cursor:pointer}
+.rcpt{grid-column:1/-1;font-size:.875rem;color:var(--accent);font-weight:600;padding-left:4px}
+.del{width:48px;height:48px;border:none;border-radius:10px;background:transparent;color:var(--muted);font-size:1.2rem;cursor:pointer}
 .del:hover{background:var(--bg);color:var(--ink)}
 .add-row{display:flex;gap:8px;flex-wrap:wrap}
-.chip-btn{font:inherit;font-weight:600;font-size:.9rem;padding:10px 14px;border-radius:10px;border:1.5px dashed var(--line);background:transparent;color:var(--ink);cursor:pointer;flex:1;text-align:center}
+.chip-btn{font:inherit;font-weight:600;font-size:.9rem;min-height:48px;padding:10px 14px;border-radius:10px;border:1.5px dashed var(--line);background:transparent;color:var(--ink);cursor:pointer;flex:1;text-align:center}
 .chip-btn.scan{border-style:solid;border-color:var(--accent);color:var(--accent)}
 .chip-btn:focus-within{outline:2px solid var(--accent);outline-offset:2px}
-.scan-status{font-size:.85rem;color:var(--muted);min-height:0}
+.scan-status{font-size:.875rem;color:var(--muted);min-height:0}
 .scan-status:empty{display:none}
 .sum{display:flex;justify-content:space-between;align-items:baseline;border-top:1.5px solid var(--line);padding-top:10px}
-.sum span{color:var(--muted);font-size:.85rem;font-weight:600}
+.sum span{color:var(--muted);font-size:.875rem;font-weight:600}
 .sum b{font-size:1.25rem}
 @media (prefers-reduced-motion:no-preference){.per{transition:color .2s}}
-.amtwarn{grid-column:1/-1;font-size:.8rem;font-weight:600;color:#b45309;background:#fef3c7;border-radius:8px;padding:6px 10px}
+.amtwarn{grid-column:1/-1;font-size:.875rem;font-weight:600;color:#b45309;background:#fef3c7;border-radius:8px;padding:6px 10px}
 .head{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
-.fsbtn{flex:none;font:inherit;font-size:.85rem;font-weight:700;min-height:44px;padding:8px 12px;border-radius:999px;border:1.5px solid var(--line);background:var(--paper);color:var(--ink);cursor:pointer}
+.fsbtn{flex:none;font:inherit;font-size:.875rem;font-weight:700;min-height:48px;padding:8px 12px;border-radius:999px;border:1.5px solid var(--line);background:var(--paper);color:var(--ink);cursor:pointer}
 .undo{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(52px + env(safe-area-inset-bottom,0px));z-index:1500;display:flex;align-items:center;gap:12px;max-width:calc(100% - 24px);background:var(--ink);color:var(--paper);border-radius:12px;padding:8px 8px 8px 14px;box-shadow:0 4px 16px rgba(0,0,0,.25);font-size:.9rem}
-.undo button{font:inherit;font-weight:800;min-height:44px;padding:8px 14px;border:0;border-radius:9px;background:var(--hi);color:#132238;cursor:pointer}
+.undo button{font:inherit;font-weight:800;min-height:48px;padding:8px 14px;border:0;border-radius:9px;background:var(--hi);color:#132238;cursor:pointer}
 .lsfail{position:fixed;top:0;left:0;right:0;z-index:1600;background:#b91c1c;color:#fff;font-size:.9rem;font-weight:700;text-align:center;padding:10px 14px}
 .wthumb{grid-column:1/-1;max-height:180px;width:auto;border-radius:8px;justify-self:start}
 .bgroups{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
 .opbar{grid-column:1/-1;display:flex;gap:6px;flex-wrap:wrap}
-.opbar button{font:inherit;font-size:1rem;font-weight:700;min-width:44px;min-height:44px;padding:6px 10px;border-radius:10px;border:1.5px solid var(--line);background:var(--paper);color:var(--ink);cursor:pointer}
-.amtcalc{grid-column:1/-1;font-size:.8rem;font-weight:600;color:var(--muted);padding:0 4px}
-.demo-start{display:flex;align-items:center;gap:10px;flex-wrap:wrap}.demo-start .chip-btn{flex:none;min-height:44px}
+.opbar button{font:inherit;font-size:1rem;font-weight:700;min-width:48px;min-height:48px;padding:6px 10px;border-radius:10px;border:1.5px solid var(--line);background:var(--paper);color:var(--ink);cursor:pointer}
+.amtcalc{grid-column:1/-1;font-size:.875rem;font-weight:600;color:var(--muted);padding:0 4px}
+.demo-start{display:flex;align-items:center;gap:10px;flex-wrap:wrap}.demo-start .chip-btn{flex:none;min-height:48px}
 .demobar{position:sticky;top:0;z-index:1400;display:flex;align-items:center;justify-content:space-between;gap:10px;background:var(--hi);color:var(--ink);border-radius:12px;padding:8px 8px 8px 14px;font-size:.9rem;font-weight:700}
-.demobar button{font:inherit;font-weight:800;min-height:44px;padding:8px 14px;border:0;border-radius:9px;background:var(--ink);color:var(--paper);cursor:pointer}
-.seg button{min-height:44px}
-.bgroups button{font:inherit;font-size:.85rem;font-weight:600;min-height:40px;padding:8px 12px;border-radius:999px;border:1.5px solid var(--line);background:transparent;color:var(--ink);cursor:pointer}
+.demobar button{font:inherit;font-weight:800;min-height:48px;padding:8px 14px;border:0;border-radius:9px;background:var(--ink);color:var(--paper);cursor:pointer}
+.seg button{min-height:48px}
+/* 좁은 화면(320px 등)이나 글자 '아주 크게'에서는 항목 이름 칸을 한 줄 전체로, 은행·계좌는 한 줄씩 */
+@media (max-width:359px){.item{grid-template-columns:minmax(0,1fr) 48px}.item>input:first-child{grid-column:1/-1}.pcard .row2,.row{grid-template-columns:minmax(0,1fr)}}
+html[data-fs="2"] .item{grid-template-columns:minmax(0,1fr) 48px}html[data-fs="2"] .item>input:first-child{grid-column:1/-1}html[data-fs="2"] .pcard .row2,html[data-fs="2"] .row{grid-template-columns:minmax(0,1fr)}
+.restart{flex:none;font:inherit;font-size:.875rem;font-weight:600;min-height:48px;padding:8px 14px;border-radius:10px;border:1.5px solid var(--line);background:transparent;color:var(--muted);cursor:pointer}
+.bgroups button{font:inherit;font-size:.875rem;font-weight:600;min-height:48px;padding:8px 12px;border-radius:999px;border:1.5px solid var(--line);background:transparent;color:var(--ink);cursor:pointer}
 
 </style>
 </head><body>
@@ -176,12 +182,13 @@ button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
       </div>
       <div class="scan-status" id="scanStatus" role="status"></div>
       <div class="sum"><span>합계</span><b class="num" id="sum">0원</b></div>
+      <button type="button" class="restart" id="restart" hidden>새로 시작 (금액만 비우기)</button>
     </div>
     <div class="field">
       <label class="label" for="people">인원 (나 포함)</label>
       <div class="stepper">
         <button type="button" id="minus" aria-label="한 명 빼기">−</button>
-        <input id="people" class="num" inputmode="numeric" value="2">
+        <input id="people" class="num" inputmode="numeric" value="2" data-nodraft>
         <button type="button" id="plus" aria-label="한 명 더하기">+</button>
       </div>
       <div class="bgroups" id="bGroups" hidden></div>
@@ -214,7 +221,7 @@ button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
     <div class="field">
       <label class="label" for="tossId">토스 아이디 (선택)</label>
       <input id="tossId" autocomplete="off" autocapitalize="off" spellcheck="false" maxlength="60" inputmode="url" placeholder="예: abcd123 (toss.me/ 뒤 영문·숫자)">
-      <span class="note">넣으면 공유 글에 누르기만 하면 되는 토스 송금 링크(https://toss.me/아이디/금액)가 들어가요. 토스 앱에서 내 토스아이디를 확인할 수 있어요.</span>
+      <span class="note">넣으면 공유 글에 누르기만 하면 되는 토스 송금 링크(https://toss.me/아이디/금액)가 들어가요. 토스 앱에서 내 토스 아이디를 확인할 수 있어요.</span>
     </div>
     <div class="field">
       <span class="label">QR 방식</span>
@@ -256,7 +263,7 @@ button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
     <div class="row"><span class="label" style="margin:0">받은 돈 체크</span><b id="paidCount" class="num"></b></div>
     <div class="pchips" id="paidChips"></div>
     <button type="button" class="xpaid" id="nudge" hidden>🔔 아직 안 보낸 사람에게 보낼 메시지 복사</button>
-    <p class="note" style="margin:0">돈을 보낸 친구를 누르면 받았어요로 표시돼요. 금액이나 인원이 바뀌면 새로 시작해요.</p>
+    <p class="note" style="margin:0">돈을 보낸 친구를 누르면 받았어요로 표시돼요. 금액이나 인원이 바뀌면 처음부터 다시 표시해요.</p>
   </section>
   </div>
 
@@ -270,7 +277,7 @@ button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
       <div class="field" id="mGroupsBox"><span class="label">자주 모이는 사람들</span>
         <div class="gchips" id="mGroups"></div>
         <button type="button" class="chip-btn" id="mSaveGroup">지금 사람들을 모임으로 저장</button></div>
-      <p class="note" style="margin:0">결제 안 한 사람도 여기 꼭 넣어 주세요. 이름만 적으면 돼요. 계좌(카카오톡 송금 링크)는 돈을 받을 사람만 넣으면 돼요.</p>
+      <p class="note" style="margin:0">결제 안 한 사람도 여기 꼭 넣어 주세요. 이름만 적으면 돼요. 계좌·토스 아이디·카카오톡 송금 링크는 돈을 받을 사람만 넣으면 돼요.</p>
     </section>
     <section class="panel" aria-label="결제 내역">
       <div class="field">
@@ -284,6 +291,7 @@ button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
         <div class="scan-status" id="mScanStatus" role="status"></div>
         <div class="sum"><span>합계</span><b class="num" id="mSum">0원</b></div>
         <div class="note" id="mPer"></div>
+        <button type="button" class="restart" id="mRestart" hidden>새로 시작 (결제만 비우기)</button>
       </div>
       <div class="field">
         <span class="label">올림 단위 (보낼 돈)</span>
@@ -322,7 +330,7 @@ const $=id=>document.getElementById(id);
 window.NB_DEMO=false;let lsFailAt=0;
 function lsSet(k,v){if(window.NB_DEMO)return true;try{localStorage.setItem(k,v);const b=$("lsFail");if(b)b.remove();return true}catch(e){
   /* 다시 실패하면 다시 보이게 (30초 간격). 잠깐 보이고 저절로 닫힘 */
-  const now=Date.now();if(!$("lsFail")&&now-lsFailAt>30000){lsFailAt=now;const b=document.createElement("div");b.id="lsFail";b.className="lsfail";b.setAttribute("role","alert");b.textContent="앱 저장 공간이 가득 차서 저장하지 못했어요. 왼쪽 아래 버전을 눌러 백업해 둔 뒤, 오래된 정산 기록이나 모임을 지워 주세요.";document.body.appendChild(b);setTimeout(()=>b.remove(),10000)}return false}}
+  const now=Date.now();if(!$("lsFail")&&now-lsFailAt>30000){lsFailAt=now;const b=document.createElement("div");b.id="lsFail";b.className="lsfail";b.setAttribute("role","alert");b.textContent="앱 저장 공간이 가득 차서 저장하지 못했어요. 왼쪽 아래 버전을 눌러 백업해 둔 뒤, 저장한 모임이나 붙인 영수증 사진을 지워 주세요.";document.body.appendChild(b);setTimeout(()=>b.remove(),10000)}return false}}
 /* 실수로 지운 것 되돌리기: 아래에 잠깐 '되돌리기' 버튼을 보여 준다 */
 let undoSlot=null;
 function showUndo(msg,onUndo,onCommit){
@@ -364,7 +372,7 @@ let round=100, mode="toss";
 // 저장된 내 계좌 불러오기
 try{const s=JSON.parse(localStorage.getItem("nbbang")||"null");
   if(s){if(s.bank)bankSel.value=s.bank; if(s.acc&&s.acc!=="3333-01-2345678")$("acc").value=cleanAcc(s.acc,true); if(tossIdOk(s.toss))$("tossId").value=s.toss; if(s.holder&&s.holder!=="김모코")$("holder").value=s.holder;
-    if([1,10,100].includes(s.round))round=s.round; if(s.mode)mode=s.mode; if(s.kakao)$("kakao").value=s.kakao; if(s.people>=1&&s.people<=999)$("people").value=s.people; $("exNote").hidden=true;}}catch(e){}
+    if([1,10,100].includes(s.round))round=s.round; if(["toss","text","kakao"].includes(s.mode))mode=s.mode; if(s.kakao)$("kakao").value=s.kakao; if(s.people>=1&&s.people<=999)$("people").value=s.people; $("exNote").hidden=true;}}catch(e){}
 
 const digits=v=>String(v).replace(/[^0-9]/g,"");
 /* 금액은 최대 99억 9,999만 원까지. 300만 원이 넘으면 "0이 더 붙었나요?" 하고 한 번 물어본다 */
@@ -469,7 +477,8 @@ let items=[{name:"",amount:0}];
 // 예전 버전이 저장해 둔 예시 줄은 버린다
 const OLD_SAMPLES=new Set(["1차 고깃집|68000","2차 카페|19000","다이닝|68000","티 & 디저트|19000","음식점|68000","카페|19000"]);
 try{const it=JSON.parse(localStorage.getItem("nbbang-items")||"null");
-  if(Array.isArray(it)){const real=it.filter(i=>i&&!OLD_SAMPLES.has((i.name||"")+"|"+(+i.amount||0)));if(real.length)items=real}}catch(e){}
+  if(Array.isArray(it)){const real=it.filter(i=>i&&typeof i==="object"&&!OLD_SAMPLES.has((i.name||"")+"|"+(+i.amount||0))).slice(0,500)
+    .map(i=>({name:String(i.name==null?"":i.name).slice(0,30),amount:Math.min(MAX_AMT,Math.max(0,Math.round(+i.amount)||0)),receipt:typeof i.receipt==="string"?i.receipt:undefined}));if(real.length)items=real}}catch(e){}
 let uid=0;items.forEach(i=>i.id=++uid);
 
 function drawItems(focusId){
@@ -477,8 +486,8 @@ function drawItems(focusId){
   items.forEach((it,idx)=>{
     const ex=idx===0?["예: 음식점","예: 100,000"]:["",""]; // 예시는 첫 줄에만
     const li=document.createElement("li");li.className="item";
-    const n=document.createElement("input");n.id="name-"+it.id;n.placeholder=ex[0];n.value=it.name||"";n.autocomplete="off";n.setAttribute("aria-label","항목 이름");
-    const a=document.createElement("input");a.id="amt-"+it.id;a.className="num amt";a.inputMode="numeric";a.placeholder=ex[1];a.autocomplete="off";a.value=it.amount?fmt(it.amount):"";a.setAttribute("aria-label","금액(원)");
+    const n=document.createElement("input");n.id="name-"+it.id;n.placeholder=ex[0];n.value=it.name||"";n.autocomplete="off";n.setAttribute("aria-label","항목 이름");n.setAttribute("data-nodraft","");
+    const a=document.createElement("input");a.id="amt-"+it.id;a.setAttribute("data-nodraft","");a.className="num amt";a.inputMode="numeric";a.placeholder=ex[1];a.autocomplete="off";a.value=it.amount?fmt(it.amount):"";a.setAttribute("aria-label","금액(원)");
     const d=document.createElement("button");d.type="button";d.className="del";d.textContent="×";d.setAttribute("aria-label","이 금액 지우기");
     n.oninput=()=>{it.name=n.value;render()};
     bindAmt(a,li,()=>it.amount,v=>{it.amount=v},render);
@@ -511,6 +520,10 @@ PRESETS.forEach(p=>{
   };
   $("presets").appendChild(b);
 });
+$("restart").onclick=()=>{const snap=items.slice();items=[{id:++uid,name:"",amount:0}];drawItems();render();
+  showUndo("금액을 모두 비웠어요",()=>{items=snap;drawItems();render()},()=>{snap.forEach(it=>{if(items.includes(it))return;
+    if(it.wphoto){try{URL.revokeObjectURL(it.wphoto)}catch(e){}delete WEB_PHOTOS[it.wphoto]}
+    if(it.receipt&&window.Android&&Android.deleteReceipt&&!items.some(x=>x.receipt===it.receipt)&&!(window.mReceipts&&mReceipts().includes(it.receipt))){try{Android.deleteReceipt(it.receipt)}catch(e){}}})})};
 $("addItem").onclick=()=>{const it={id:++uid,name:"",amount:0};items.push(it);drawItems(it.id);render()};
 
 let activeTab="basic";
@@ -533,11 +546,15 @@ function compute(){
 
 /* 받은 돈 체크 (단독): 친구 1, 친구 2 ... 를 눌러 표시. 금액·인원이 바뀌면 처음부터 */
 /* 자주 모이는 사람들(여럿이 결제 탭에서 저장한 모임)을 눌러 인원 수와 이름을 채움 */
+/* 저장한 모임 불러오기: 백업 파일이 망가져 있어도 탭이 깨지지 않게 항목마다 형태를 확인한다 */
+function loadGroupsSafe(){let g=[];try{g=JSON.parse(localStorage.getItem("nbbang-groups")||"[]")}catch(e){}if(!Array.isArray(g))return[];
+  return g.filter(x=>x&&typeof x==="object"&&typeof x.name==="string"&&Array.isArray(x.people)).slice(0,10)
+    .map(x=>({name:x.name.slice(0,80),people:x.people.filter(p=>p&&typeof p==="object").slice(0,50).map(p=>({name:String(p.name==null?"":p.name).slice(0,20),bank:typeof p.bank==="string"?p.bank:"",acc:typeof p.acc==="string"?p.acc:"",kakao:typeof p.kakao==="string"?p.kakao.slice(0,300):"",toss:typeof p.toss==="string"?p.toss:""}))}))
+    .filter(x=>x.people.length)}
 let bNames=[];try{const n=JSON.parse(localStorage.getItem("nbbang-names")||"[]");if(Array.isArray(n))bNames=n.map(String).slice(0,50)}catch(e){}
 function drawBGroups(){
   const box=$("bGroups");box.innerHTML="";let gs=[];
-  try{gs=JSON.parse(localStorage.getItem("nbbang-groups")||"[]");if(!Array.isArray(gs))gs=[]}catch(e){}
-  gs=gs.filter(g=>g&&Array.isArray(g.people)&&g.people.length>=2);box.hidden=!gs.length;if(!gs.length)return;
+  gs=loadGroupsSafe().filter(g=>g.people.length>=2);box.hidden=!gs.length;if(!gs.length)return;
   const l=document.createElement("span");l.className="note";l.textContent="모임 불러오기:";box.appendChild(l);
   gs.forEach(g=>{const b=document.createElement("button");b.type="button";b.textContent=`${g.name} (${g.people.length}명)`;
     b.onclick=()=>{$("people").value=g.people.length;bNames=g.people.slice(1).map(p=>String(p.name||""));lsSet("nbbang-names",JSON.stringify(bNames));render();
@@ -555,10 +572,11 @@ function drawPaid(total,people,per){
     b.textContent=(on?"✓ ":"")+nm;b.setAttribute("aria-pressed",String(on));b.setAttribute("aria-label",nm+(on?" 받았어요":" 아직 안 받음"));
     b.onclick=()=>{st.on=on?st.on.filter(x=>x!==i):st.on.concat(i);lsSet("nbbang-paid",JSON.stringify(st));drawPaid(total,people,per)};chips.appendChild(b)}
   const n=st.on.length,ng=$("nudge");
-  if(ng){ng.hidden=n>=others;ng.onclick=()=>{const r=render(),L=[`[N빵] 아직 ${others-n}명 남았어요 🙏`,`1인당 ${fmt(per)}원`];
+  if(ng){ng.hidden=n>=others;ng.onclick=()=>{const r=render(),left=[];for(let i=1;i<=others;i++)if(!st.on.includes(i))left.push((bNames[i-1]||"").trim()||"친구 "+i);
+    const L=[`[N빵] 아직 안 보낸 사람: ${left.length>10?left.slice(0,10).join(", ")+` 외 ${left.length-10}명`:left.join(", ")} 🙏`,`1인당 ${fmt(per)}원`];
     L.push(...payLines(r,per));
     copy(L.join("\n"),"메시지를 복사했어요. 카카오톡 단톡방에 붙여 넣어 주세요")}}
-  $("paidCount").textContent=n>=others?`다 받았어요 🎉 ${fmt(per*others)}원`:`${n}/${others}명 · ${fmt(per*n)}원 받음`;
+  $("paidCount").textContent=n>=others?`모두 받았어요 🎉 ${fmt(per*others)}원`:`받았어요 ${n}/${others}명 · ${fmt(per*n)}원`;
 }
 /* 공유 글의 '보낼 곳' 줄들: 계좌는 한 번만, 토스 아이디가 있으면 눌리는 https 링크, 없으면 사람이 읽는 안내 */
 function payLines(r,amount){
@@ -578,8 +596,12 @@ function render(){
   const others=people-1;
   const collected=per*others;
   drawPaid(total,people,per);
+  /* 올림 때문에 친구들에게 받을 돈이 합계보다 많아지면 '내 몫 0원'으로 가리지 않고 얼마 더 받는지 알려 준다 */
+  const over=collected-total;
   $("calc").textContent = people<2 ? "인원을 2명 이상으로 해 주세요." :
-    `${fmt(total)}원 ÷ ${people}명 · 다른 ${others}명에게 받으면 ${fmt(collected)}원\n(내 몫 ${fmt(Math.max(0,total-collected))}원)`;
+    `${fmt(total)}원 ÷ ${people}명 · 다른 ${others}명에게 받으면 ${fmt(collected)}원\n`+
+    (over>0?`올림 때문에 합계보다 ${fmt(over)}원을 더 받아요.${round>1?" 올림 단위를 1원으로 바꾸면 줄어요.":""}`:`(내 몫 ${fmt(total-collected)}원)`);
+  $("restart").hidden=!items.some(i=>(+i.amount||0)>0||(i.name||"").trim()||i.receipt||i.wphoto);
   const kakao=$("kakao").value.trim(), kakaoOk=/^https:\/\/([a-z0-9-]+\.)*kakaopay\.com\/\S+$/i.test(kakao);
   $("kakaoField").hidden = mode!=="kakao";
   if(mode==="kakao"){
@@ -599,7 +621,8 @@ function render(){
   }
   else if(mode==="toss"&&toss) data=tossMe(toss,per); /* 계좌 없이 토스 아이디만 넣었을 때 */
   const box=$("qr");
-  if(!data||typeof qrcode==="undefined"){box.innerHTML=`<div class="empty">${typeof qrcode==="undefined"?"QR을 불러오지 못했어요. 앱을 다시 열어 주세요.":(mode==="kakao"?"카카오톡 송금 링크를 넣으면 QR이 생겨요":"계좌번호를 넣으면 QR이 생겨요")}</div>`}
+  if(people<2){box.innerHTML='<div class="empty">인원을 2명 이상으로 하면 QR이 생겨요</div>'}
+  else if(!data||typeof qrcode==="undefined"){box.innerHTML=`<div class="empty">${typeof qrcode==="undefined"?"QR을 불러오지 못했어요. 앱을 다시 열어 주세요.":(mode==="kakao"?"카카오톡 송금 링크를 넣으면 QR이 생겨요":"계좌번호를 넣으면 QR이 생겨요")}</div>`}
   else{
     if(qrcode.stringToBytesFuncs&&qrcode.stringToBytesFuncs["UTF-8"])qrcode.stringToBytes=qrcode.stringToBytesFuncs["UTF-8"];
     const q=qrcode(0,"M");q.addData(data);q.make();
@@ -678,13 +701,16 @@ render();
   let mid=0;
   const newPerson=()=>({id:++mid,name:"",bank:BANKS[0],acc:"",kakao:"",toss:""});
   const tossOf=p=>p&&tossIdOk(p.toss)?p.toss:"";
-  let S={people:[newPerson(),newPerson()],pays:[],round:100,mode:"toss"};
+  /* sid: 이번 정산 번호. 결제 금액이 모두 0이 되면 다음에 새 번호로 시작해서 '받았어요' 표시가 다음 정산에 남지 않게 한다 */
+  let S={people:[newPerson(),newPerson()],pays:[],round:100,mode:"toss",sid:""};
   try{
     const s=JSON.parse(localStorage.getItem(M_KEY)||"null");
+    if(s&&Array.isArray(s.people))s.people=s.people.filter(p=>p&&typeof p==="object").slice(0,100);
     if(s&&Array.isArray(s.people)&&s.people.length){
-      S.people=s.people.map(p=>({id:++mid,name:p.name||"",bank:BANKS.includes(p.bank)?p.bank:BANKS[0],acc:cleanAcc(p.acc,true),kakao:p.kakao||"",toss:tossIdOk(p.toss)?p.toss:"",_old:p.id}));
+      S.people=s.people.map(p=>({id:++mid,name:String(p.name||"").slice(0,20),bank:BANKS.includes(p.bank)?p.bank:BANKS[0],acc:cleanAcc(p.acc,true),kakao:typeof p.kakao==="string"?p.kakao.slice(0,300):"",toss:tossIdOk(p.toss)?p.toss:"",_old:p.id}));
+      if(typeof s.sid==="string")S.sid=s.sid.slice(0,20);
       const map={};S.people.forEach(p=>map[p._old]=p.id);S.people.forEach(p=>delete p._old);
-      S.pays=(s.pays||[]).map(x=>({id:++mid,name:x.name||"",amount:+x.amount||0,payer:map[x.payer]||S.people[0].id,receipt:x.receipt,ex:Array.isArray(x.ex)?x.ex.map(o=>map[o]).filter(Boolean):[]}));
+      S.pays=(Array.isArray(s.pays)?s.pays:[]).filter(x=>x&&typeof x==="object").slice(0,1000).map(x=>({id:++mid,name:String(x.name||"").slice(0,30),amount:Math.min(MAX_AMT,Math.max(0,Math.round(+x.amount)||0)),payer:map[x.payer]||S.people[0].id,receipt:typeof x.receipt==="string"?x.receipt:undefined,ex:Array.isArray(x.ex)?x.ex.map(o=>map[o]).filter(Boolean):[]}));
       if([1,10,100].includes(s.round))S.round=s.round;
       if(["toss","text","kakao"].includes(s.mode))S.mode=s.mode;
     }
@@ -693,7 +719,7 @@ render();
 
   /* 자주 모이는 사람들: 이름·계좌를 모임으로 저장해 두고 한 번에 불러온다 (최대 10개, 이 폰에만 저장) */
   const G_KEY="nbbang-groups";
-  const loadGroups=()=>{try{const g=JSON.parse(localStorage.getItem(G_KEY)||"[]");return Array.isArray(g)?g:[]}catch(e){return[]}};
+  const loadGroups=loadGroupsSafe;
   const saveGroups=g=>{lsSet(G_KEY,JSON.stringify(g.slice(0,10)));if(window.drawBGroups)drawBGroups()};
   function drawGroups(){
     const box=$("mGroups");if(!box)return;box.innerHTML="";const gs=loadGroups();
@@ -715,12 +741,15 @@ render();
   }
   /* 송금 완료 체크 (다수): 보낸 사람→받는 사람·금액마다 '받았어요' 표시 */
   const P_KEY="nbbang-mpaid";
-  const loadPaid=()=>{try{return new Set(JSON.parse(localStorage.getItem(P_KEY)||"[]"))}catch(e){return new Set()}};
+  const loadPaid=()=>{try{const a=JSON.parse(localStorage.getItem(P_KEY)||"[]");return new Set(Array.isArray(a)?a.filter(k=>typeof k==="string"):[])}catch(e){return new Set()}};
+  const pkOf=x=>S.sid+":"+nameOf(x.from)+">"+nameOf(x.to)+"|"+x.amount;
+  /* 예전 버전 표시(정산 번호 없음)는 지금 정산 것으로 옮긴다 (한 번만) */
+  { const ps=loadPaid();if([...ps].some(k=>!/^\d+:/.test(k))){if(!S.sid)S.sid=String(Date.now());const n=new Set([...ps].map(k=>/^\d+:/.test(k)?k:S.sid+":"+k));lsSet(P_KEY,JSON.stringify([...n].slice(-200)))} }
   const savePaid=s=>{lsSet(P_KEY,JSON.stringify([...s].slice(-200)))};
-  const save=()=>{lsSet(M_KEY,JSON.stringify({people:S.people,pays:S.pays.map(({name,amount,payer,receipt,ex})=>({name,amount,payer,receipt,ex:ex&&ex.length?ex:undefined})),round:S.round,mode:S.mode}))};
+  const save=()=>{lsSet(M_KEY,JSON.stringify({people:S.people,pays:S.pays.map(({name,amount,payer,receipt,ex})=>({name,amount,payer,receipt,ex:ex&&ex.length?ex:undefined})),round:S.round,mode:S.mode,sid:S.sid}))};
   /* 되돌리기용: 지금 사람·결제 상태를 통째로 복사 (웹 사진 주소는 그대로) */
-  const snapS=()=>({people:S.people.map(p=>Object.assign({},p)),pays:S.pays.map(y=>Object.assign({},y,{ex:y.ex?y.ex.slice():y.ex}))});
-  const restoreS=o=>{S.people=o.people;S.pays=o.pays;drawPeople();drawPays();update()};
+  const snapS=()=>({people:S.people.map(p=>Object.assign({},p)),pays:S.pays.map(y=>Object.assign({},y,{ex:y.ex?y.ex.slice():y.ex})),sid:S.sid});
+  const restoreS=o=>{S.people=o.people;S.pays=o.pays;S.sid=o.sid;drawPeople();drawPays();update()};
   const pname=(p,i)=>(p.name||"").trim()||(i===0?"나":`친구 ${i}`);
   const nameOf=id=>{const i=S.people.findIndex(p=>p.id===id);return i<0?"?":pname(S.people[i],i)};
   const el=(tag,cls,txt)=>{const e=document.createElement(tag);if(cls)e.className=cls;if(txt!=null)e.textContent=txt;return e};
@@ -728,9 +757,11 @@ render();
   // 참여자
   function drawPeople(){
     const box=$("mPeople");box.innerHTML="";
-    S.people.forEach((p,i)=>{
+    const fr=document.createDocumentFragment();S.people.forEach((p,i)=>fr.appendChild(personCard(p,i)));box.appendChild(fr);
+  }
+  function personCard(p,i){
       const c=el("div","pcard");
-      const n=el("input");n.id="mp-name-"+p.id;n.value=p.name;n.autocomplete="off";n.setAttribute("aria-label","이름");
+      const n=el("input");n.id="mp-name-"+p.id;n.value=p.name;n.autocomplete="off";n.setAttribute("aria-label","이름");n.setAttribute("data-nodraft","");
       n.placeholder=i===0?"나":`친구 ${i}`;n.maxLength=20;
       n.oninput=()=>{p.name=n.value;refreshPayerOptions();update()};
       const x=el("button","del","×");x.type="button";x.setAttribute("aria-label","이 사람 빼기");
@@ -767,11 +798,15 @@ render();
         k.maxLength=300;k.oninput=()=>{p.kakao=k.value.trim();update()};
         c.appendChild(k);
       }
-      box.appendChild(c);
-    });
+      c.querySelectorAll("input").forEach(e=>e.setAttribute("data-nodraft",""));
+      return c;
   }
   $("mSaveGroup").onclick=saveGroup;drawGroups();
-  $("mAddPerson").onclick=()=>{const p=newPerson();S.people.push(p);drawPeople();refreshPayerOptions();update();const e=$("mp-name-"+p.id);if(e)e.focus()};
+  /* 사람 추가: 새 카드 하나만 붙이고, 결제마다 '결제한 사람'·'나눌 사람'에 그 사람만 더한다 */
+  $("mAddPerson").onclick=()=>{const p=newPerson();S.people.push(p);const i=S.people.length-1;$("mPeople").appendChild(personCard(p,i));
+    S.pays.forEach(y=>{const s=$("mpay-who-"+y.id);if(s){const o=el("option",null,pname(p,i));o.value=p.id;s.appendChild(o)}
+      const sw=$("mpay-sh-"+y.id);if(sw)sw.appendChild(shareChip(y,p,i))});
+    update();const e=$("mp-name-"+p.id);if(e)e.focus()};
 
   // 결제 내역
   function payerSelect(y){
@@ -790,10 +825,11 @@ render();
   }
   function drawPays(focusId){
     const ul=$("mPays");ul.innerHTML="";
+    const fr=document.createDocumentFragment();
     S.pays.forEach((y,idx)=>{
       const li=el("li","item");
-      const n=el("input");n.id="mpay-name-"+y.id;n.autocomplete="off";n.value=y.name||"";n.setAttribute("aria-label","항목 이름");
-      const a=el("input","num amt");a.id="mpay-amt-"+y.id;a.inputMode="numeric";a.autocomplete="off";a.value=y.amount?fmt(y.amount):"";a.setAttribute("aria-label","금액(원)");
+      const n=el("input");n.id="mpay-name-"+y.id;n.autocomplete="off";n.value=y.name||"";n.setAttribute("aria-label","항목 이름");n.setAttribute("data-nodraft","");
+      const a=el("input","num amt");a.id="mpay-amt-"+y.id;a.setAttribute("data-nodraft","");a.inputMode="numeric";a.autocomplete="off";a.value=y.amount?fmt(y.amount):"";a.setAttribute("aria-label","금액(원)");
       if(idx===0){n.placeholder="예: 음식점";a.placeholder="예: 100,000"}
       n.oninput=()=>{y.name=n.value;update()};
       n.maxLength=30;bindAmt(a,li,()=>y.amount,v=>{y.amount=v},update);
@@ -813,19 +849,27 @@ render();
       const who=el("label","payer");who.append(el("span",null,"결제한 사람"),payerSelect(y));
       li.append(n,a,d,who);
       /* 나눌 사람: 기본은 모두. 안 먹은 사람을 눌러 빼기 */
-      const sw=el("div","shw");sw.appendChild(el("span",null,"나눌 사람"));
-      S.people.forEach((p,i)=>{const on=!(y.ex||[]).includes(p.id);const b=el("button","shc",pname(p,i));b.type="button";b.setAttribute("aria-pressed",String(on));
-        b.setAttribute("aria-label",pname(p,i)+(on?" 같이 나눔":" 빠짐"));
-        b.onclick=()=>{const ex=new Set(y.ex||[]);if(ex.has(p.id))ex.delete(p.id);else{if(S.people.length-ex.size<=1){mToast("한 명은 남아야 해요.");return}ex.add(p.id)}y.ex=[...ex];drawPays();update()};
-        sw.appendChild(b)});
+      const sw=el("div","shw");sw.id="mpay-sh-"+y.id;sw.appendChild(el("span",null,"나눌 사람"));
+      S.people.forEach((p,i)=>sw.appendChild(shareChip(y,p,i)));
       li.appendChild(sw);
       if(y.wphoto){const im=el("img","wthumb");im.src=y.wphoto;im.alt="붙인 영수증 사진";li.appendChild(im)}
       if(y.receipt||y.wphoto)li.appendChild(el("div","rcpt",y.receipt?"사진 첨부됨 · 공유할 때 같이 보내져요":"사진 첨부됨 · 공유할 때 같이 보내요 (앱을 닫으면 사진은 사라져요)"));
-      ul.appendChild(li);
+      fr.appendChild(li);
     });
+    ul.appendChild(fr);
     if(focusId){const e=$("mpay-amt-"+focusId);if(e)e.focus()}
   }
+  function shareChip(y,p,i){
+    const b=el("button","shc",pname(p,i));b.type="button";
+    const paint=()=>{const on=!(y.ex||[]).includes(p.id);b.setAttribute("aria-pressed",String(on));b.setAttribute("aria-label",(b.textContent)+(on?" 같이 나눔":" 빠짐"))};paint();
+    b.onclick=()=>{const ex=new Set(y.ex||[]);if(ex.has(p.id))ex.delete(p.id);else{if(S.people.length-ex.size<=1){mToast("한 명은 남아야 해요.");return}ex.add(p.id)}y.ex=[...ex];paint();update()};
+    return b;
+  }
   const lastPayer=()=>{const y=[...S.pays].reverse().find(z=>z.amount>0);return y?y.payer:S.people[0].id};
+  $("mRestart").onclick=()=>{const snap=snapS();S.pays=[{id:++mid,name:"",amount:0,payer:S.people[0].id}];drawPays();update();
+    showUndo("결제를 모두 비웠어요",()=>restoreS(snap),()=>{snap.pays.forEach(y=>{if(S.pays.some(z=>z.id===y.id))return;
+      if(y.wphoto&&!S.pays.some(z=>z.wphoto===y.wphoto)&&!items.some(z=>z.wphoto===y.wphoto)){try{URL.revokeObjectURL(y.wphoto)}catch(e){}delete WEB_PHOTOS[y.wphoto]}
+      if(y.receipt&&window.Android&&Android.deleteReceipt&&!S.pays.some(z=>z.receipt===y.receipt)&&!items.some(z=>z.receipt===y.receipt)){try{Android.deleteReceipt(y.receipt)}catch(e){}}})})};
   $("mAddPay").onclick=()=>{const y={id:++mid,name:"",amount:0,payer:lastPayer()};S.pays.push(y);drawPays(y.id);update()};
   ["음식점","카페","쇼핑"].forEach(pr=>{
     const b=el("button",null,pr);b.type="button";
@@ -902,10 +946,20 @@ render();
     return {data:`${to.bank} ${acc} ${nameOf(to.id)}\n${fmt(amount)}원`,line,note:"찍으면 계좌와 금액이 글자로 떠요"};
   }
 
-  let last=null;
-  function update(){
-    save();
+  let last=null,lastSig="",upQ=0;
+  /* 여러 번 불려도 한 화면(프레임)에 한 번만 계산·그리기 */
+  function update(){if(upQ)return;upQ=requestAnimationFrame(()=>{upQ=0;updateNow()})}
+  function flushUpdate(){if(upQ){cancelAnimationFrame(upQ);upQ=0;updateNow()}}
+  document.addEventListener("visibilitychange",()=>{if(document.hidden)flushUpdate()});addEventListener("pagehide",flushUpdate);
+  function updateNow(){
     const r=settle();last=r;
+    /* 이번 정산 번호: 금액이 모두 0이면 비우고, 다시 금액이 생기면 새 번호 */
+    if(!r.total)S.sid="";else if(!S.sid)S.sid=String(Date.now());
+    save();
+    $("mRestart").hidden=!S.pays.some(y=>y.amount>0||(y.name||"").trim()||y.receipt||y.wphoto);
+    /* 결과가 그대로면 아래 목록을 다시 그리지 않는다 (누르던 '받았어요' 버튼이 사라지지 않게, 빠르게) */
+    const sig=JSON.stringify([r.total,r.paid,r.share,r.xfers,S.mode,S.round,S.sid,S.people.map(p=>[p.name,p.bank,p.acc,p.kakao,p.toss]),[...loadPaid()].length]);
+    if(sig===lastSig)return;lastSig=sig;
     $("mSum").textContent=fmt(r.total)+"원";
     const lo=Math.floor(r.total/r.N);
     $("mPer").textContent=r.total?(r.split?`${r.N}명 · 메뉴별로 나눔 (사람별 금액은 아래)`:`${r.N}명 · 1인당 ${r.total%r.N?fmt(lo)+"~"+fmt(lo+1):fmt(lo)}원`+(r.total%r.N?" (남는 몇 원은 결제한 사람 몫으로 계산해요)":"")):`${r.N}명`;
@@ -915,7 +969,7 @@ render();
     else S.people.forEach((p,i)=>{
       const row=el("div","bal");
       const left=el("div","bal-who");
-      left.append(el("b",null,pname(p,i)),el("span","note",r.paid[p.id]?`낸 돈 ${fmt(r.paid[p.id])}원 · 내 몫 ${fmt(r.share[p.id])}원`:`결제 안 함 · 내 몫 ${fmt(r.share[p.id])}원`));
+      left.append(el("b",null,pname(p,i)),el("span","note",r.paid[p.id]?`낸 돈 ${fmt(r.paid[p.id])}원 · 낼 몫 ${fmt(r.share[p.id])}원`:`결제 안 함 · 낼 몫 ${fmt(r.share[p.id])}원`));
       const n=r.net[p.id];
       const pill=el("span","pill "+(n>0?"get":n<0?"give":"even"),n>0?`받을 돈 ${fmt(n)}원`:n<0?`보낼 돈 ${fmt(-n)}원`:"주고받을 돈 없음");
       row.append(left,pill);bal.appendChild(row);
@@ -942,16 +996,16 @@ render();
       }
       /* 단독 정산의 '계좌만 복사'처럼, 받는 사람 계좌를 바로 복사 */
       if(to&&digits(to.acc)){const cb=el("button","xpaid","계좌 복사 · "+to.bank+" "+cleanAcc(to.acc,true));cb.type="button";cb.onclick=()=>{copy(`${to.bank} ${digits(to.acc)}`,"계좌번호를 복사했어요");mToast(`${nameOf(x.to)} 계좌번호를 복사했어요`)};card.appendChild(cb)}
-      const pk=nameOf(x.from)+">"+nameOf(x.to)+"|"+x.amount, paidSet=loadPaid(), done=paidSet.has(pk);
+      const pk=pkOf(x), paidSet=loadPaid(), done=paidSet.has(pk);
       const pb=el("button","xpaid",done?"✓ 받았어요 (누르면 취소)":"받았어요 표시");pb.type="button";pb.setAttribute("aria-pressed",String(done));
       pb.onclick=()=>{const s2=loadPaid();if(s2.has(pk))s2.delete(pk);else s2.add(pk);savePaid(s2);update()};
       card.appendChild(pb);if(done)card.classList.add("done");
       list.appendChild(card);
     });
-    { const ps=loadPaid(), n=r.xfers.filter(x=>ps.has(nameOf(x.from)+">"+nameOf(x.to)+"|"+x.amount)).length;
-      list.insertBefore(el("p","note",n>=r.xfers.length?"모두 보냈어요 🎉":`보낸 사람 ${n}/${r.xfers.length}`),list.firstChild);
+    { const ps=loadPaid(), n=r.xfers.filter(x=>ps.has(pkOf(x))).length;
+      list.insertBefore(el("p","note",n>=r.xfers.length?"모두 받았어요 🎉":`받았어요 ${n}/${r.xfers.length}건`),list.firstChild);
       if(n<r.xfers.length){const rb=el("button","xpaid","🔔 아직 안 보낸 사람에게 보낼 메시지 복사");rb.type="button";
-        rb.onclick=()=>{const ps2=loadPaid(),left=r.xfers.filter(x=>!ps2.has(nameOf(x.from)+">"+nameOf(x.to)+"|"+x.amount));
+        rb.onclick=()=>{const ps2=loadPaid(),left=r.xfers.filter(x=>!ps2.has(pkOf(x)));
           const L=["[N빵] 정산 아직 안 끝났어요 🙏"];xferLines(left,L);
           copy(L.join("\n"),"메시지를 복사했어요. 카카오톡에 붙여 넣어 주세요")};
         list.insertBefore(rb,list.children[1]||null)} }
@@ -968,7 +1022,7 @@ render();
     if(howto&&S.mode!=="kakao")L.push(TOSS_HOWTO);
   }
   function shareText(){
-    const r=last||settle();
+    const r=settle();
     const L=["[N빵 정산 · 여럿이 결제]"];
     S.pays.filter(y=>y.amount>0).forEach(y=>{const ex=(y.ex||[]).filter(id=>S.people.some(p=>p.id===id));L.push(`· ${(y.name||"").trim()||"결제"} ${fmt(y.amount)}원 (${nameOf(y.payer)} 결제)${ex.length?` · ${ex.map(nameOf).join(", ")} 빼고 나눔`:""}${y.receipt||y.wphoto?" (사진 첨부)":""}`)});
     if(r.split){L.push(`합계 ${fmt(r.total)}원 · 메뉴별로 나눔`);S.people.forEach((p,i)=>L.push(`  ${pname(p,i)} 몫 ${fmt(r.share[p.id])}원`))}
@@ -1003,6 +1057,7 @@ render();
     lsSet("nbbang-tab",t);
   }
   document.querySelectorAll("#tabs button").forEach(b=>b.onclick=()=>showTab(b.dataset.tab));
+  window.nbShowTab=showTab;
   seg("mRound",S.round);seg("mMode",S.mode);
   drawPeople();drawPays();update();
   let t0="basic";try{if(localStorage.getItem("nbbang-tab")==="multi")t0="multi"}catch(e){}
@@ -1016,6 +1071,8 @@ render();
 /* 예시로 둘러보기: 처음(빈 화면)일 때만 버튼을 보여 주고, 누르면 예시를 채워 보여 준다. 아무것도 저장하지 않고, '예시 닫기'를 누르면 원래대로 */
 (function(){
   const box=$("demoStart");if(!box)return;
+  const closeDemo=()=>{try{localStorage.removeItem("__drafts_v1")}catch(e){}location.reload()};
+  window.nbCloseDemo=closeDemo;
   const empty=()=>!items.some(i=>(+i.amount||0)>0)&&!digits($("acc").value)&&!(window.mTotal&&mTotal()>0);
   box.hidden=!empty();
   $("demoBtn").onclick=()=>{
@@ -1025,12 +1082,20 @@ render();
     drawItems();render();if(window.mDemo)mDemo();
     const bar=document.createElement("div");bar.className="demobar";bar.setAttribute("role","status");
     const t=document.createElement("span");t.textContent="예시 화면이에요 · 저장되지 않아요";
-    const b=document.createElement("button");b.type="button";b.textContent="예시 닫기";b.onclick=()=>location.reload();
+    const b=document.createElement("button");b.type="button";b.textContent="예시 닫기";b.onclick=closeDemo;
     bar.append(t,b);document.querySelector(".wrap").prepend(bar);window.scrollTo(0,0);
   };
 })();
 </script>
 
+<script>
+/* 뒤로 가기: 화면 설정 닫기 → 예시 닫기 → 여럿이 결제면 혼자 결제로 → 그다음에 앱 종료 (정보 창은 정보 창 쪽에서 먼저 닫음) */
+window.onBackKey=function(){
+  const vb=$("viewBox");if(vb&&!vb.hidden){vb.hidden=true;$("fsBtn").setAttribute("aria-expanded","false");$("fsBtn").focus();return true}
+  if(window.NB_DEMO&&window.nbCloseDemo){nbCloseDemo();return true}
+  if(activeTab==="multi"&&window.nbShowTab){nbShowTab("basic");window.scrollTo(0,0);return true}
+  return false};
+</script>
 <script>
 // 아이폰·웹: 글자 자동 읽기는 앱(안드로이드)에서만 돼요. 웹에서는 사진을 붙이고 금액은 직접 넣어요.
 (function(){
@@ -1085,7 +1150,7 @@ render();
 #appVer::after{content:"";position:absolute;left:-10px;right:-10px;top:50%;height:46px;transform:translateY(-50%)}
 #appVer.moving{opacity:.25}#appVer.crowd{opacity:.9}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) #appVer{background:rgba(24,33,43,.94);border-color:#2b3744;color:#B3BEC9}}:root[data-theme="dark"] #appVer{background:rgba(24,33,43,.94);border-color:#2b3744;color:#B3BEC9}
-body{padding-bottom:calc(84px + env(safe-area-inset-bottom,0px))}</style><button type="button" id="appVer">v1.28</button>
+body{padding-bottom:calc(84px + env(safe-area-inset-bottom,0px))}</style><button type="button" id="appVer">v1.29</button>
 <script>
 /* 버전 알약은 늘 왼쪽 아래 그 자리에 둔다 (화면 중간으로 올라가지 않음).
    움직이는 동안만 흐리게 하고, 맨 아래까지 내리면 본문 여백 덕분에 아무것도 가리지 않는다 */
@@ -1107,13 +1172,11 @@ body{padding-bottom:calc(84px + env(safe-area-inset-bottom,0px))}</style><button
   document.addEventListener("focusin",later,true);document.addEventListener("focusout",later,true);
   setTimeout(place,50);setTimeout(place,600);
 })();
-/* 웹앱(아이폰·PC): 한 번 열면 인터넷 없이도 열리게 (앱 안에서는 쓰지 않음) */
-if(!window.Android&&"serviceWorker" in navigator&&window.isSecureContext&&location.protocol==="https:")addEventListener("load",()=>navigator.serviceWorker.register("sw.js").catch(()=>{}));
 </script>
 
 
 <!--APPINFO--><script>
-window.APP_INFO={"name": "N빵", "repo": "mini-2026/nbbang-qr", "version": "1.28", "mount": "#appVer", "notes": [{"v": "current", "d": "2026.11.20", "items": ["📝 적던 글 지키기: 글을 적다가 앱이 꺼져도 사라지지 않아요. 다시 열어 같은 칸을 열면 적던 글이 그대로 이어져요 (필요 없으면 '버리기'를 눌러 주세요)"]}, {"v": "v1.27", "d": "2026.11.15", "items": ["✏️ 문구 다듬기: '붙여 넣으세요'처럼 시키는 말을 '붙여 넣어 주세요'로 부드럽게 바꾸고, 띄어쓰기(알려 드려요)를 맞췄어요. 비밀번호·저장 공간 안내를 다른 앱과 같은 말로 맞추고, '내 데이터 백업'을 '내 기록 백업'으로 바꿨어요"]}, {"v": "v1.26", "d": "2026.11.15", "items": ["📍 왼쪽 아래 버전이 화면 중간으로 올라가던 문제를 고쳤어요. 이제 늘 왼쪽 아래에 있고, 화면을 끝까지 내리면 아래 내용을 가리지 않아요"]}, {"v": "v1.25", "d": "2026.11.13", "items": ["🧮 금액 칸에서 곱하기·나누기도 돼요: '10000×3', '5000*2', '(30000+12000)÷3'. '3만', '1만5천', '2.5만'처럼 써도 알아들어요", "⌨️ 금액 칸을 누르면 아래에 + − × ÷ 만 천 버튼이 나와요 (숫자 키패드에 없는 기호도 넣을 수 있어요)", "⚠️ 알아듣지 못한 글은 바꾸지 않고 알려 드려요. 계산 결과에 소수점이 생기면 원 단위로 반올림하고 알려 드려요 (예전에는 '10000×3'이 100,003원이 됐어요)", "💸 공유 글이 깔끔해졌어요: 카카오톡에서 눌리지 않던 토스 앱 주소를 빼고, 계좌는 한 번만 적어요", "🔗 토스 아이디(선택)를 넣으면 공유 글에 누르면 바로 열리는 토스 송금 링크(https://toss.me/…)가 들어가요", "🏦 계좌번호 맨 앞·맨 뒤에 남은 '-'는 저절로 지워요", "🔠 맨 위 오른쪽 '화면 설정'에서 '글자 크기'(보통·크게·아주 크게)와 '화면 색'(폰 설정 따라·밝게·어둡게)을 골라요", "👀 처음 화면의 '예시로 둘러보기'로 예시를 볼 수 있어요 (저장되지 않아요)", "📶 아이폰 웹앱: 한 번 열면 인터넷이 없어도 열려요", "🔒 백업 비밀번호는 8글자 이상으로 바꿨어요 (예전 백업은 그대로 열려요). 숫자만 쓰면 한 번 더 알려 드려요", "👆 왼쪽 아래 버전이 'QR 방식' 같은 제목·안내 글을 가리지 않게 했어요", "✏️ 문구 다듬기: 저장 공간 안내를 더 정확하게, '카톡'을 '카카오톡'으로, 새 버전 안내 창 문구를 앱과 다운로드 페이지에서 똑같이"]}, {"v": "v1.24", "d": "2026.11.12", "items": ["🔒 백업 파일에 비밀번호를 걸 수 있어요 (6글자 이상 · 계좌번호가 들어 있으니 걸어 두는 걸 권해요)", "🔒 보안 강화: 글꼴을 인터넷에서 받지 않고 폰 글꼴을 써요. 앱 화면은 새 버전 확인 말고는 인터넷에 접속하지 않고, 폰 자동 백업에 계좌 정보가 담기지 않게 했어요", "💸 공유 글과 재촉 메시지에 '토스로 보내기' 주소도 같이 넣어요", "🔢 금액 칸: 빼기(-)만 넣거나 소수점을 넣으면 알려 줘요. '50000-5000'처럼 할인을 빼거나 '12000+8500'처럼 더해도 돼요", "🏦 계좌번호 칸에는 숫자와 - 만 들어가요", "↩️ 실수로 지운 금액·결제·사람·모임을 '되돌리기'로 살려요", "🔠 글자 크기: 보통·크게·아주 크게", "👥 혼자 결제에서도 저장한 모임을 누르면 인원 수와 이름이 채워져요", "📷 아이폰·웹에서도 영수증 사진을 붙일 수 있어요 (금액은 직접 넣어요)", "✏️ 문구 다듬기: '받았어요 표시', '계좌 정보 글', 예시 글자에 '예:' 붙이기, 금액이 없을 때 '정산 끝' 대신 안내", "👆 왼쪽 아래 버전 버튼: 누르기 쉽게 키우고, 맨 아래 버튼을 가리지 않게 여백을 두었어요"]}, {"v": "v1.22", "d": "2026.11.12", "items": ["📱 아이폰에서도 쓸 수 있어요: 다운로드 페이지의 '아이폰·PC에서는 웹으로 쓰기'로 열고 홈 화면에 추가하면 돼요", "✏️ 화면 글자 다듬기: '단독/다수' 탭을 '혼자 결제/여럿이 결제'로, 올림은 '올림 단위'로 알아보기 쉽게 바꿨어요"]}, {"v": "v1.21", "d": "2026.11.09", "items": ["⚡ 앱이 더 빨리 열려요: 글꼴을 기다리지 않고 화면부터 보여 드려요"]}, {"v": "v1.19", "d": "2026.11.05", "items": ["보안 강화: 앱 화면이 허락된 곳 말고는 스크립트를 불러오지 못하게 막고, 폰의 다른 파일을 읽지 못하게 하고, 업데이트 파일은 이 앱 저장소 주소에서만 받아요", "QR 만드는 라이브러리를 npm 공식 저장소에서 무결성을 확인한 파일만 써요", "메뉴별로 나누기 (여럿이 결제): 결제마다 '나눌 사람'에서 안 먹은 사람을 눌러 빼면 그 결제는 나머지끼리만 나눠요", "아직 안 보낸 사람에게 보낼 메시지를 한 번에 복사 (혼자 결제·여럿이 결제 모두)"]}, {"v": "v1.18", "d": "2026.11.05", "items": ["왼쪽 아래 버전 → 내 기록 백업: 기록을 파일로 저장했다가 새 폰에서 불러오기"]}, {"v": "v1.17", "d": "2026.11.01", "items": ["여럿이 결제에도 송금마다 계좌 복사 버튼"]}, {"v": "v1.16", "d": "2026.11.01", "items": ["받은 돈 체크: 돈을 보낸 친구를 눌러 표시하고, 다 받으면 알려 드려요 (여럿이 결제는 송금마다 받았어요 표시)", "자주 모이는 사람들을 모임으로 저장해 두고 누르기만 하면 이름·계좌가 채워져요", "300만 원이 넘는 금액은 0이 더 붙지 않았는지 한 번 물어봐요"]}, {"v": "v1.15", "d": "2026.11.01", "items": ["인원 수도 저장돼서 다시 열어도 그대로예요 (예전에는 2명으로 돌아갔어요)", "인원 칸에 0을 넣으면 1명으로 고쳐요", "여럿이 결제에서 결제한 사람을 빼면, 그 결제를 누구에게 옮겼는지 알려 드려요"]}, {"v": "v1.13", "d": "2026.11.01", "items": ["왼쪽 아래 버전을 누르면 앱 정보·업데이트 내용·개인정보를 볼 수 있어요", "새 버전이 나오면 버전 글씨가 노란색으로 바뀌어요", "뒤로 가기로 열린 창을 먼저 닫아요"]}, {"v": "v1.12", "d": "2026.11.01", "items": ["보안: 앱 서명 키를 새로 바꿨어요 (이번 한 번만 지우고 새로 설치)", "용량 44.9MB → 1MB (글자 인식은 폰의 Google Play 서비스 것을 빌려 씀)", "정식(릴리스) 빌드로 더 가볍고 빠르게", "쓰이지 않던 AI 연결 코드를 지웠어요"]}, {"v": "v1.10", "d": "2026.10.25", "items": ["영수증·결제 캡처에서 금액과 가게 이름 읽기", "송금 QR, 정산 메시지 공유"]}], "privacy": "계좌·정산 내용과 영수증 사진은 이 폰에만 저장되고, 폰 자동 백업에도 담기지 않아요. 영수증 글자 인식은 폰 안에서 해요. 인터넷은 새 버전 확인에만 써요. 2026년 11월 1일 전에 받은 앱(v1.10 이하)을 쓰고 있다면 지우고 새로 설치해 주세요.", "backup": {"keys": ["nbbang", "nbbang-*"], "bridge": "Android"}};
+window.APP_INFO={"name": "N빵", "repo": "mini-2026/nbbang-qr", "version": "1.29", "mount": "#appVer", "notes": [{"v": "current", "d": "2026.11.26", "items": ["💰 예시 화면에서 적은 금액이 예시를 닫은 뒤 내 금액 줄에 몰래 들어가던 문제를 고쳤어요", "💰 올림 때문에 친구들에게 받을 돈이 합계보다 많아지면 얼마 더 받는지 알려 드려요 (예전에는 '내 몫 0원'으로만 보였어요)", "✅ 여럿이 결제: 금액을 모두 지우고 다음 정산을 시작하면 '받았어요' 표시도 처음부터 다시 해요", "🧹 '새로 시작' 버튼: 계좌·사람은 그대로 두고 금액(결제)만 한 번에 비워요. 실수했다면 '되돌리기'를 눌러 주세요", "🔔 혼자 결제 재촉 메시지에 아직 안 보낸 사람 이름도 들어가요", "⚡ 여럿이 결제: 사람·결제가 많아도 '+ 사람 추가'와 '나눌 사람'이 바로 반응해요", "🛡️ 망가진 백업 파일을 불러와도 여럿이 결제 화면이 깨지지 않아요. 비밀번호 없이 백업할 때는 한 번 더 물어봐요", "↩️ 뒤로 가기: 화면 설정·예시 화면을 먼저 닫고, 여럿이 결제에서는 혼자 결제로 돌아가요", "👆 버튼을 누르기 쉽게 키우고 작은 글씨를 키웠어요. 좁은 화면에서도 항목 이름과 계좌번호가 잘리지 않아요", "✏️ 문구 다듬기: 사람별 정산의 '내 몫'을 '낼 몫'으로, '보낸 사람'을 '받았어요'로 맞췄어요", "📶 아이폰 웹앱이 인터넷 없이 열린다는 안내는 사실과 달라서 뺐어요 (웹앱은 인터넷이 있어야 열려요)"]}, {"v": "v1.28", "d": "2026.11.20", "items": ["📝 적던 글 지키기: 글을 적다가 앱이 꺼져도 사라지지 않아요. 앱을 다시 열면 적던 글이 이어져요 (필요 없으면 '버리기'를 눌러 주세요)"]}, {"v": "v1.27", "d": "2026.11.15", "items": ["✏️ 문구 다듬기: '붙여 넣으세요'처럼 시키는 말을 '붙여 넣어 주세요'로 부드럽게 바꾸고, 띄어쓰기(알려 드려요)를 맞췄어요. 비밀번호·저장 공간 안내를 다른 앱과 같은 말로 맞추고, '내 데이터 백업'을 '내 기록 백업'으로 바꿨어요"]}, {"v": "v1.26", "d": "2026.11.15", "items": ["📍 왼쪽 아래 버전이 화면 중간으로 올라가던 문제를 고쳤어요. 이제 늘 왼쪽 아래에 있고, 화면을 끝까지 내리면 아래 내용을 가리지 않아요"]}, {"v": "v1.25", "d": "2026.11.13", "items": ["🧮 금액 칸에서 곱하기·나누기도 돼요: '10000×3', '5000*2', '(30000+12000)÷3'. '3만', '1만5천', '2.5만'처럼 써도 알아들어요", "⌨️ 금액 칸을 누르면 아래에 + − × ÷ 만 천 버튼이 나와요 (숫자 키패드에 없는 기호도 넣을 수 있어요)", "⚠️ 알아듣지 못한 글은 바꾸지 않고 알려 드려요. 계산 결과에 소수점이 생기면 원 단위로 반올림하고 알려 드려요 (예전에는 '10000×3'이 100,003원이 됐어요)", "💸 공유 글이 깔끔해졌어요: 카카오톡에서 눌리지 않던 토스 앱 주소를 빼고, 계좌는 한 번만 적어요", "🔗 토스 아이디(선택)를 넣으면 공유 글에 누르면 바로 열리는 토스 송금 링크(https://toss.me/…)가 들어가요", "🏦 계좌번호 맨 앞·맨 뒤에 남은 '-'는 저절로 지워요", "🔠 맨 위 오른쪽 '화면 설정'에서 '글자 크기'(보통·크게·아주 크게)와 '화면 색'(폰 설정 따라·밝게·어둡게)을 골라요", "👀 처음 화면의 '예시로 둘러보기'로 예시를 볼 수 있어요 (저장되지 않아요)", "🔒 백업 비밀번호는 8글자 이상으로 바꿨어요 (예전 백업은 그대로 열려요). 숫자만 쓰면 한 번 더 알려 드려요", "👆 왼쪽 아래 버전이 'QR 방식' 같은 제목·안내 글을 가리지 않게 했어요", "✏️ 문구 다듬기: 저장 공간 안내를 더 정확하게, '카톡'을 '카카오톡'으로, 새 버전 안내 창 문구를 앱과 다운로드 페이지에서 똑같이"]}, {"v": "v1.24", "d": "2026.11.12", "items": ["🔒 백업 파일에 비밀번호를 걸 수 있어요 (6글자 이상 · 계좌번호가 들어 있으니 걸어 두는 걸 권해요)", "🔒 보안 강화: 글꼴을 인터넷에서 받지 않고 폰 글꼴을 써요. 앱 화면은 새 버전 확인 말고는 인터넷에 접속하지 않고, 폰 자동 백업에 계좌 정보가 담기지 않게 했어요", "💸 공유 글과 재촉 메시지에 '토스로 보내기' 주소도 같이 넣어요", "🔢 금액 칸: 빼기(-)만 넣거나 소수점을 넣으면 알려 줘요. '50000-5000'처럼 할인을 빼거나 '12000+8500'처럼 더해도 돼요", "🏦 계좌번호 칸에는 숫자와 - 만 들어가요", "↩️ 실수로 지운 금액·결제·사람·모임을 '되돌리기'로 살려요", "🔠 글자 크기: 보통·크게·아주 크게", "👥 혼자 결제에서도 저장한 모임을 누르면 인원 수와 이름이 채워져요", "📷 아이폰·웹에서도 영수증 사진을 붙일 수 있어요 (금액은 직접 넣어요)", "✏️ 문구 다듬기: '받았어요 표시', '계좌 정보 글', 예시 글자에 '예:' 붙이기, 금액이 없을 때 '정산 끝' 대신 안내", "👆 왼쪽 아래 버전 버튼: 누르기 쉽게 키우고, 맨 아래 버튼을 가리지 않게 여백을 두었어요"]}, {"v": "v1.22", "d": "2026.11.12", "items": ["📱 아이폰에서도 쓸 수 있어요: 다운로드 페이지의 '아이폰·PC에서는 웹으로 쓰기'로 열고 홈 화면에 추가하면 돼요", "✏️ 화면 글자 다듬기: '단독/다수' 탭을 '혼자 결제/여럿이 결제'로, 올림은 '올림 단위'로 알아보기 쉽게 바꿨어요"]}, {"v": "v1.21", "d": "2026.11.09", "items": ["⚡ 앱이 더 빨리 열려요: 글꼴을 기다리지 않고 화면부터 보여 드려요"]}, {"v": "v1.19", "d": "2026.11.05", "items": ["보안 강화: 앱 화면이 허락된 곳 말고는 스크립트를 불러오지 못하게 막고, 폰의 다른 파일을 읽지 못하게 하고, 업데이트 파일은 이 앱 저장소 주소에서만 받아요", "QR 만드는 라이브러리를 npm 공식 저장소에서 무결성을 확인한 파일만 써요", "메뉴별로 나누기 (여럿이 결제): 결제마다 '나눌 사람'에서 안 먹은 사람을 눌러 빼면 그 결제는 나머지끼리만 나눠요", "아직 안 보낸 사람에게 보낼 메시지를 한 번에 복사 (혼자 결제·여럿이 결제 모두)"]}, {"v": "v1.18", "d": "2026.11.05", "items": ["왼쪽 아래 버전 → 내 기록 백업: 기록을 파일로 저장했다가 새 폰에서 불러오기"]}, {"v": "v1.17", "d": "2026.11.01", "items": ["여럿이 결제에도 송금마다 계좌 복사 버튼"]}, {"v": "v1.16", "d": "2026.11.01", "items": ["받은 돈 체크: 돈을 보낸 친구를 눌러 표시하고, 다 받으면 알려 드려요 (여럿이 결제는 송금마다 받았어요 표시)", "자주 모이는 사람들을 모임으로 저장해 두고 누르기만 하면 이름·계좌가 채워져요", "300만 원이 넘는 금액은 0이 더 붙지 않았는지 한 번 물어봐요"]}, {"v": "v1.15", "d": "2026.11.01", "items": ["인원 수도 저장돼서 다시 열어도 그대로예요 (예전에는 2명으로 돌아갔어요)", "인원 칸에 0을 넣으면 1명으로 고쳐요", "여럿이 결제에서 결제한 사람을 빼면, 그 결제를 누구에게 옮겼는지 알려 드려요"]}, {"v": "v1.13", "d": "2026.11.01", "items": ["왼쪽 아래 버전을 누르면 앱 정보·업데이트 내용·개인정보를 볼 수 있어요", "새 버전이 나오면 버전 글씨가 노란색으로 바뀌어요", "뒤로 가기로 열린 창을 먼저 닫아요"]}, {"v": "v1.12", "d": "2026.11.01", "items": ["보안: 앱 서명 키를 새로 바꿨어요 (이번 한 번만 지우고 새로 설치)", "용량 44.9MB → 1MB (글자 인식은 폰의 Google Play 서비스 것을 빌려 씀)", "정식(릴리스) 빌드로 더 가볍고 빠르게", "쓰이지 않던 AI 연결 코드를 지웠어요"]}, {"v": "v1.10", "d": "2026.10.25", "items": ["영수증·결제 캡처에서 금액과 가게 이름 읽기", "송금 QR, 정산 메시지 공유"]}], "privacy": "계좌·정산 내용과 영수증 사진은 이 폰에만 저장되고, 폰 자동 백업에도 담기지 않아요. 영수증 글자 인식은 폰 안에서 해요. 인터넷은 새 버전 확인에만 써요. 2026년 11월 1일 전에 받은 앱(v1.10 이하)을 쓰고 있다면 지우고 새로 설치해 주세요.", "backup": {"keys": ["nbbang", "nbbang-*"], "bridge": "Android"}};
 window.APP_INFO.online=!!window.Android;APP_INFO.web=!window.Android&&location.protocol==="https:";
 </script>
 <script>
@@ -1300,6 +1363,9 @@ window.APP_INFO.online=!!window.Android;APP_INFO.web=!window.Android&&location.p
     /* 숫자만 쓴 비밀번호는 쉽게 풀릴 수 있어서 한 번 더 확인 (막지는 않음) */
     if (pw && /^[0-9]+$/.test(pw) && bk.weakOk !== pw) { bk.weakOk = pw; bkSet('숫자만 쓴 비밀번호는 알아내기 쉬워요. 글자를 섞어 주세요. 그래도 쓰려면 "백업 파일로 저장"을 한 번 더 눌러 주세요.'); return; }
     bk.weakOk = null;
+    /* 비밀번호 없이 저장하면 계좌번호가 그대로 든 파일이 생겨서 한 번 확인 */
+    if (!pw && !bk.noPwOk) { bk.noPwOk = true; bkSet('비밀번호 없이 저장할까요? 백업 파일에 계좌번호가 그대로 들어가요. 그래도 저장하려면 "백업 파일로 저장"을 한 번 더 눌러 주세요.'); return; }
+    bk.noPwOk = false;
     bkSet(pw ? '비밀번호로 잠근 백업 파일을 만드는 중이에요…' : '백업 파일을 만드는 중이에요…', true);
     var ls = {}; lsKeys().forEach(function (k) { ls[k] = localStorage.getItem(k); });
     Promise.all((B.idb || []).map(idbDump)).then(function (dumps) {
@@ -1435,6 +1501,8 @@ window.APP_INFO.online=!!window.Android;APP_INFO.web=!window.Android&&location.p
   'use strict';
   var KEY = '__drafts_v1', MAXAGE = 3 * 864e5, MAXLEN = 5000;
   var SKIP = /pw|pass|비밀|계좌|acc|card|카드|bank|은행|예금주|holder|search|검색|^q$|find|otp|pin/i;
+  /* N빵은 금액·이름·인원·계좌 칸을 이미 저절로 저장해서, 이 칸들은 남겨 두지 않는다 (예전 버전이 남긴 것도 버림) */
+  var AUTO = /^(name-|amt-|mp-|mpay-|people$|holder$|acc$|tossId$|kakao$)/;
   var store = {}, pending = {}, live = {}, timer = null, tick = null, mo = null;
   function load() {
     try { var o = JSON.parse(localStorage.getItem(KEY) || '{}'); return o && typeof o === 'object' ? o : {}; } catch (e) { return {}; }
@@ -1447,11 +1515,12 @@ window.APP_INFO.online=!!window.Android;APP_INFO.web=!window.Android&&location.p
   }
   function keyOf(el) {
     if (!el || el.disabled || el.readOnly || el.hasAttribute('data-nodraft')) return '';
+    if (window.NB_DEMO) return '';
     var tag = el.tagName;
     if (tag === 'INPUT') { var t = (el.getAttribute('type') || 'text').toLowerCase(); if (t !== 'text') return ''; }
     else if (tag !== 'TEXTAREA') return '';
     var k = el.id || el.getAttribute('name') || el.getAttribute('placeholder') || '';
-    if (!k || SKIP.test(k) || SKIP.test(el.getAttribute('placeholder') || '') || /one-time|cc-/.test(el.getAttribute('autocomplete') || '')) return '';
+    if (!k || SKIP.test(k) || AUTO.test(k) || SKIP.test(el.getAttribute('placeholder') || '') || /one-time|cc-/.test(el.getAttribute('autocomplete') || '')) return '';
     return k.slice(0, 80);
   }
   function find(k) {
@@ -1504,7 +1573,7 @@ window.APP_INFO.online=!!window.Android;APP_INFO.web=!window.Android&&location.p
     for (i = 0; i < ks.length; i++) {
       k = ks[i]; el = find(k);
       if (!el || !(root === document || root.contains(el))) continue;
-      if (el.value) { continue; }
+      if (el.value) { if (el.value === pending[k].v) { delete pending[k]; save(); } continue; }
       el.value = pending[k].v; live[k] = pending[k]; delete pending[k]; n++; last = el;
       try { el.dispatchEvent(new Event('input', { bubbles: true })); } catch (e) {}
     }
@@ -1521,7 +1590,7 @@ window.APP_INFO.online=!!window.Android;APP_INFO.web=!window.Android&&location.p
   function start() {
     store = load();
     var now = Date.now(), k;
-    for (k in store) if (store[k] && typeof store[k].v === 'string' && now - (store[k].t || 0) < MAXAGE) pending[k] = store[k];
+    for (k in store) if (store[k] && typeof store[k].v === 'string' && now - (store[k].t || 0) < MAXAGE && !AUTO.test(k)) pending[k] = store[k];
     save();
     document.addEventListener('input', onInput, true);
     document.addEventListener('click', later, true);
