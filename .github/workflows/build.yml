@@ -41,17 +41,15 @@ jobs:
           echo "BT=$BT" >> $GITHUB_ENV
       - name: Signing key
         if: env.SKIP != '1'
-        env: { PASS: '${{ secrets.SIGNING_PASS }}' }
+        env: { PASS: '${{ secrets.SIGNING_PASS }}', KEY_B64: '${{ secrets.SIGNING_KEY_B64 }}' }
         run: |
           if [ ${#PASS} -lt 16 ]; then echo "::error::Add secret SIGNING_PASS (16+ characters)"; exit 1; fi
-          if [ ! -f keys/release.p12 ]; then
-            mkdir -p keys
-            keytool -genkeypair -keystore keys/release.p12 -storetype PKCS12 -storepass "$PASS" -alias app \
-              -keyalg RSA -keysize 4096 -validity 36500 -dname "CN=${GITHUB_REPOSITORY#*/}"
-            git add keys/release.p12
-            git -c user.name=Claude -c user.email=noreply@anthropic.com commit -q -m "Add encrypted signing key"
-            git push
-          fi
+          mkdir -p keys
+          # 서명 키는 Secret(SIGNING_KEY_B64)을 먼저 쓰고, 없으면 예전처럼 저장소 파일을 써요.
+          # 새 키는 절대 만들지 않아요 (키가 바뀌면 업데이트 설치가 안 돼요).
+          if [ -n "$KEY_B64" ]; then printf '%s' "$KEY_B64" | base64 -d > keys/release.p12
+          elif [ ! -f keys/release.p12 ]; then echo "::error::Add secret SIGNING_KEY_B64 (signing key missing; never generate a new one)"; exit 1; fi
+          keytool -list -keystore keys/release.p12 -storetype PKCS12 -storepass "$PASS" -alias app >/dev/null
       - name: Sign APK
         if: env.SKIP != '1'
         env: { PASS: '${{ secrets.SIGNING_PASS }}' }
