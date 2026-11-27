@@ -1,4 +1,4 @@
-/* 홈 화면 앱(PWA): 오프라인 열기, 데이터 보관 요청, 홈 화면 추가 안내 (웹페이지에만 있어요) */
+/* 홈 화면 앱(PWA): 오프라인 열기, 데이터 보관 요청, 아이폰 홈 화면 추가 안내 (웹페이지에만 있어요) */
 (function () {
   'use strict';
   var SW = '__SW__', NAME = '__NAME__';
@@ -14,7 +14,7 @@
   var KEY = 'pwa-hint:' + location.pathname;
   function closed() { try { return localStorage.getItem(KEY) === '1'; } catch (e) { return true; } }
   function close(bar) { try { localStorage.setItem(KEY, '1'); } catch (e) {} if (bar) bar.remove(); }
-  function bar(text, btnText, onBtn) {
+  function bar(text) {
     if (closed() || document.getElementById('pwa-hint')) return;
     var b = document.createElement('div'); b.id = 'pwa-hint'; b.setAttribute('role', 'status');
     var st = b.style;
@@ -29,7 +29,6 @@
       s.background = main ? '#3b82f6' : 'transparent'; s.color = '#fff'; s.flex = 'none';
       x.addEventListener('click', fn); b.appendChild(x);
     }
-    if (btnText) btn(btnText, function () { onBtn(b); }, true);
     btn('닫기', function () { close(b); }, false);
     document.body.appendChild(b);
   }
@@ -40,18 +39,11 @@
     if (ios) {
       setTimeout(function () {
         bar(inApp ? 'Safari로 열면 홈 화면에 앱처럼 추가할 수 있어요.'
-                  : '홈 화면에 앱처럼 추가할 수 있어요. 아래쪽 공유 버튼 → 홈 화면에 추가', '', null);
+                  : '홈 화면에 앱처럼 추가할 수 있어요. 아래쪽 공유 버튼 → 홈 화면에 추가');
       }, 1500);
     }
   }
-  // 안드로이드 크롬: 설치할 수 있을 때만 '설치' 버튼을 보여 줘요
-  window.addEventListener('beforeinstallprompt', function (e) {
-    e.preventDefault();
-    var ev = e;
-    bar('홈 화면에 ' + NAME + ' 아이콘을 추가할 수 있어요.', '설치', function (b) {
-      ev.prompt(); ev.userChoice.then(function () { close(b); }).catch(function () { close(b); });
-    });
-  });
+  // 안드로이드는 안내를 띄우지 않아요: 브라우저 주소창의 홈 화면 추가 버튼이 바로 아이콘을 만들어 줘요
   window.addEventListener('appinstalled', function () { close(document.getElementById('pwa-hint')); });
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start); else start();
 })();
