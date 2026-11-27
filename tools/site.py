@@ -13,6 +13,19 @@ src = 'android/' + about.get('webroot', 'assets')
 if about.get('web'):
     shutil.copytree(src, os.path.join(out, 'app'),
                     ignore=shutil.ignore_patterns('dexopt', '*.prof', '*.profm', 'capacitor*.json', 'native-bridge.js'))
+    # 아이폰 '홈 화면에 추가' 때 글자 대신 앱 아이콘이 나오게 (웹 복사본에만 넣어요)
+    app_html = os.path.join(out, 'app', 'index.html')
+    if os.path.exists('site/icon.png') and os.path.exists(app_html):
+        shutil.copy('site/icon.png', os.path.join(out, 'app', 'apple-touch-icon.png'))
+        s = open(app_html, encoding='utf-8').read()
+        if 'apple-touch-icon' not in s:
+            # 같은 사이트 아이콘만 허용 (외부 이미지는 그대로 막아요)
+            s = re.sub(r"(img-src)(?![^;\"]*'self')", r"\1 'self'", s, count=1)
+            tag = ('<link rel="apple-touch-icon" href="apple-touch-icon.png">'
+                   '<link rel="icon" href="apple-touch-icon.png">'
+                   '<meta name="apple-mobile-web-app-title" content="%s">' % html.escape(about['name']))
+            s = s.replace('</title>', '</title>' + tag, 1) if '</title>' in s else s.replace('</head>', tag + '</head>', 1)
+            open(app_html, 'w', encoding='utf-8').write(s)
 
 def find_notes():
     pat = re.compile(r'(?:"notes"\s*:|\bnotes\s*:|\bNOTES\s*=)\s*\[')
