@@ -23,8 +23,8 @@ jobs:
       - id: v
         name: Read version
         run: |
-          code=$(grep -oP 'versionCode:\s*\K\d+' android/apktool.yml)
-          name=$(grep -oP 'versionName:\s*\K[0-9.]+' android/apktool.yml)
+          code=$(grep -oP "versionCode:\s*'?\K\d+" android/apktool.yml)
+          name=$(grep -oP "versionName:\s*'?\K[0-9.]+" android/apktool.yml)
           scheme=$(python3 -c "import json;print(json.load(open('site/about.json'))['tag'])")
           if [ "$scheme" = code ]; then tag="v$code"; else tag="v$name"; fi
           echo "ver=$name" >> $GITHUB_OUTPUT; echo "TAG=$tag" >> $GITHUB_ENV; echo "VER=$name" >> $GITHUB_ENV
