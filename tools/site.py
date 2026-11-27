@@ -69,18 +69,21 @@ upd = ''.join(
     for n in notes) or '<p>업데이트 내용은 앱 안 왼쪽 아래 버전을 눌러 볼 수 있어요.</p>'
 web = (f'<a class="b2" href="app/">🌐 웹페이지</a>' if about.get('web') else '')
 
+has_icon = os.path.exists('site/icon.png')
+icon_tag = '<img src="icon.png" alt="">' if has_icon else ''
+icon_link = '<link rel="icon" href="icon.png"><link rel="apple-touch-icon" href="icon.png">' if has_icon else ''
 page = f'''<!doctype html><html lang="ko"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'unsafe-inline'; img-src 'self' data:">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'unsafe-inline'; img-src 'self' data:">{icon_link}
 <title>{e(about["name"])} 받기</title><style>
 body{{margin:0;font-family:system-ui,-apple-system,"Apple SD Gothic Neo",sans-serif;background:#f6f7f9;color:#1d2330;line-height:1.6}}
-main{{max-width:560px;margin:0 auto;padding:28px 18px 60px}}h1{{font-size:28px;margin:0 0 4px}}
+main{{max-width:560px;margin:0 auto;padding:28px 18px 60px}}h1{{font-size:28px;margin:0 0 4px}}.hd{{display:flex;gap:14px;align-items:center}}.hd img{{width:64px;height:64px;border-radius:16px;flex:none}}
 .v{{color:#6b7280;margin:0 0 20px}}.b,.b2{{display:block;text-align:center;padding:15px;border-radius:14px;font-weight:700;text-decoration:none;font-size:17px;margin:10px 0}}
 .b{{background:#2563eb;color:#fff}}.b2{{background:#fff;color:#2563eb;border:1.5px solid #2563eb}}
 section{{background:#fff;border-radius:16px;padding:16px 18px;margin:16px 0;box-shadow:0 1px 3px #0001}}
 h2{{font-size:18px;margin:0 0 8px}}ul{{margin:4px 0;padding-left:20px}}.n{{border-top:1px solid #eee;padding:8px 0}}.n:first-of-type{{border:0}}
 .n span{{color:#6b7280;font-size:14px}}.w{{background:#fff8e1}}</style></head><body><main>
-<h1>{e(about["name"])}</h1><p class="v">최신 버전 v{e(ver)}</p>
+<div class="hd">{icon_tag}<div><h1>{e(about["name"])}</h1><p class="v">최신 버전 v{e(ver)}</p></div></div>
 <a class="b" href="{apk}">⬇️ 안드로이드 앱 받기</a>{web}
 <section><h2>이런 앱이에요</h2><ul>{intro}</ul></section>
 <section class="w"><h2>설치 방법</h2><ul>
@@ -91,9 +94,11 @@ h2{{font-size:18px;margin:0 0 8px}}ul{{margin:4px 0;padding-left:20px}}.n{{borde
 <section><h2>개인정보</h2><ul>{privacy}</ul></section>
 </main></body></html>'''
 open(os.path.join(out, 'index.html'), 'w', encoding='utf-8').write(page)
+if has_icon:
+    shutil.copy('site/icon.png', os.path.join(out, 'icon.png'))
 # old in-app links (guide.html etc.) land on the download page
 for old in about.get('redirects', []):
     open(os.path.join(out, old), 'w', encoding='utf-8').write(
-        '<!doctype html><meta charset="utf-8"><meta http-equiv="refresh" content="0;url=./">')
+        '<!doctype html><meta charset="utf-8"><meta http-equiv="refresh" content="0;url=%s">' % ('app/' if old == 'app.html' and about.get('web') else './'))
 open(os.path.join(out, '.nojekyll'), 'w').close()
 print('site ok', len(notes), 'notes')
