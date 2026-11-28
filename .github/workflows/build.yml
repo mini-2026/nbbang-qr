@@ -30,6 +30,8 @@ jobs:
           echo "ver=$name" >> $GITHUB_OUTPUT; echo "TAG=$tag" >> $GITHUB_ENV; echo "VER=$name" >> $GITHUB_ENV
           if gh release view "$tag" >/dev/null 2>&1; then echo "SKIP=1" >> $GITHUB_ENV; fi
         env: { GH_TOKEN: '${{ github.token }}' }
+      - name: Sync version
+        run: python3 tools/syncver.py
       - name: Build APK
         if: env.SKIP != '1'
         run: |
@@ -71,6 +73,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Sync version
+        run: python3 tools/syncver.py
       - name: Build site
         run: python3 tools/site.py
         env: { REPO: '${{ github.repository }}', APP_VER: '${{ needs.apk.outputs.ver }}' }
